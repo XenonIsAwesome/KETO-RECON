@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Superpowers SDD scratch workspace (ledgers, briefs, review packages)
+.superpowers/
+
+# Local dev-preview tooling config
+.claude/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
