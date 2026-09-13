@@ -474,6 +474,116 @@
       "taxi_fare_day": 17,
       "taxi_fare_night": 17,
       "currency": "ILS"
+    },
+    {
+      "id": "branja",
+      "name": {
+        "en": "Branja",
+        "he": "ברנז'ה"
+      },
+      "website_url": "https://restaurantguru.com/Branja-Eilat",
+      "menu_url_he": "https://wolt.com/he/isr/eilat/restaurant/cafe-branja-eilat/items/menucategory-2",
+      "image_url": "https://img02.restaurantguru.com/c484-Branja-Restaurant-food-1.jpg",
+      "lat": 29.5513959,
+      "lng": 34.9521337,
+      "google_rating": 4.6,
+      "keto_score": 5,
+      "description": {
+        "en": "Branja is a bustling all-day café-restaurant in Eilat's Tourist Center, serving breakfast, brunch, lunch and dinner in a colorful, laid-back garden setting. For keto diners, standout options include the creamy chicken with cauliflower sauce, the green shakshuka (eggs cooked in a spiced tomato-herb base), and a hearty tuna salad — all naturally high-fat, low-carb choices. The wider menu also spans bread-based sandwiches, waffles and desserts, so it's an easy pick for a group where not everyone is doing keto.",
+        "he": "ברנז'ה הוא בית קפה-מסעדה תוסס במרכז התיירותי של אילת, הפועל כל שעות היום ומגיש ארוחות בוקר, בראנץ', צהריים וערב באווירה צבעונית וזורמת. לשומרי קטו יש כמה בחירות טובות כמו חזה עוף ברוטב כרובית ושמנת, השקשוקה הירוקה (ביצים ברוטב עשבי תיבול חריף) וסלט הטונה העשיר בחלבון ובשומן. לצד זה יש בתפריט גם הרבה מנות מבוססות לחם, וופלים וקינוחים, כך שגם מי שלא אוכל קטו ימצא בקלות מה לאכול."
+      },
+      "distance_km": 1.33,
+      "taxi_fare_day": 20,
+      "taxi_fare_night": 22,
+      "currency": "ILS"
+    },
+    {
+      "id": "halev-harachav",
+      "name": {
+        "en": "HaLev HaRachav",
+        "he": "הלב הרחב"
+      },
+      "website_url": "https://halev-harahav.co.il/",
+      "menu_url_he": null,
+      "image_url": "https://halev-harahav.co.il/wp-content/uploads/2021/11/3.jpg",
+      "lat": 29.5483683,
+      "lng": 34.9517502,
+      "google_rating": 4.0,
+      "keto_score": 6,
+      "description": {
+        "en": "HaLev HaRachav is a long-running Eilat institution — a grill-and-steakhouse that grew out of a 1970s falafel stand and now serves a broad selection of char-grilled meats and fresh fish alongside its original falafel and shawarma. For keto eaters, the grilled steaks, skewers and fish paired with fresh salads are naturally high-fat and low-carb (skip the pita and rice sides). The falafel and shawarma-in-pita options keep the menu friendly for non-keto companions too.",
+        "he": "הלב הרחב הוא מוסד ותיק באילת שהחל כדוכן פלאפל בשנות ה-70 והפך למסעדת גריל וסטייקים המגישה מבחר רחב של בשרים על האש ודגים טריים, לצד הפלאפל והשווארמה המקוריים. לשומרי קטו, הסטייקים, השיפודים והדגים על האש בשילוב הסלטים הטריים מהווים בחירה שומנית ודלת פחמימות (רק לוותר על הפיתה והאורז). הפלאפל והשווארמה בפיתה שומרים על המסעדה ידידותית גם למי שלא אוכל קטו."
+      },
+      "distance_km": 1.33,
+      "taxi_fare_day": 20,
+      "taxi_fare_night": 22,
+      "currency": "ILS"
+    },
+    {
+      "id": "gulf-restaurant",
+      "name": {
+        "en": "Gulf Restaurant",
+        "he": "מסעדת המפרץ"
+      },
+      "website_url": "https://www.hamipratzeilat.co.il/",
+      "menu_url_he": null,
+      "image_url": "https://static.wixstatic.com/media/ac0b37_f8bf48de6f3d43bfb44186e582d3bc7df000.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ac0b37_f8bf48de6f3d43bfb44186e582d3bc7df000.jpg",
+      "lat": 29.5508639,
+      "lng": 34.9593115,
+      "google_rating": 4.0,
+      "keto_score": 7,
+      "description": {
+        "en": "Gulf Restaurant (HaMifratz) is a long-standing seafood and Mediterranean restaurant near Eilat's northern promenade, about 250 meters from the famous bridge, serving fresh daily-caught fish, seafood platters, charcoal-grilled meats, fresh salads and authentic Italian pasta. For keto diners the grilled fish, shrimp and other seafood dishes and skewered grilled meats are naturally low-carb and rich in healthy fats, and the fresh salads can be ordered without bread or croutons; the pasta courses are there mainly for non-keto companions rather than being a keto pick.",
+        "he": "מסעדת המפרץ היא מסעדת דגים ופירות ים ותיקה הממוקמת סמוך לטיילת הצפונית של אילת, כ-250 מטר מהגשר המפורסם, ומגישה דגי ים טריים שנתפסו יום-יום, פירות ים, בשרים על האש, סלטים טריים ופסטות איטלקיות אותנטיות. לשומרי קיטו, הדגים ופירות הים הצלויים והבשרים על הגריל הם בחירה טבעית דלת פחמימות ועתירת שומן בריא, ואפשר להזמין את הסלטים הטריים בלי לחם או קרוטונים; מנות הפסטה מיועדות בעיקר לסועדים שאינם שומרים על קיטו."
+      },
+      "distance_km": 0.65,
+      "taxi_fare_day": 18,
+      "taxi_fare_night": 19,
+      "currency": "ILS"
+    },
+    {
+      "id": "papi-grill",
+      "name": {
+        "en": "Papi Grill",
+        "he": "פאפי גריל"
+      },
+      "website_url": "https://papigrill.com/",
+      "menu_url_he": "https://papigrill.com/%D7%9E%D7%95%D7%9E%D7%9C%D7%A6%D7%99%D7%9D/",
+      "image_url": "https://papigrill.com/wp-content/uploads/2020/10/DSC_3638.jpg",
+      "lat": 29.5623796,
+      "lng": 34.9592315,
+      "google_rating": 4.5,
+      "keto_score": 8,
+      "description": {
+        "en": "Papi Grill (formerly El Gaucho) is a traditional Argentine steakhouse at the entrance to Eilat, run by the Nachimov family for over three decades, grilling Israeli wagyu, Galilee-breed lamb ribs, asado cuts and beef flown in from Argentina and Uruguay over imported palo santo charcoal. Its menu leans strongly keto-friendly, with fat-rich specialties like bone marrow, veal sweetbreads, foie gras and grilled ribeye alongside the classic steaks, though it also serves polenta, pasta and dessert courses for guests who aren't watching carbs.",
+        "he": "פאפי גריל (לשעבר אל גאוצ'ו) היא מסעדת בשרים ארגנטינאית מסורתית בכניסה לאילת, המתופעלת כבר יותר משלושה עשורים בידי משפחת נחימוב, וצולה על גחלי פאלו סנטו מיובאים ואגיו ישראלי, צלעות כבש מזן גלילי, נתחי אסאדו ובשר המובא במיוחד מארגנטינה ואורוגוואי. התפריט עתיר שומן ודל פחמימות במיוחד הודות למנות כמו מוח עצם, שקדי עגל, כבד אווז ואנטריקוט צלוי לצד הסטייקים הקלאסיים, ולצדם מוגשים גם פולנטה, פסטות וקינוחים עבור סועדים שלא שומרים על קיטו."
+      },
+      "distance_km": 1.64,
+      "taxi_fare_day": 22,
+      "taxi_fare_night": 24,
+      "currency": "ILS"
+    },
+    {
+      "id": "village-beach",
+      "name": {
+        "en": "Village Beach (Sea Village)",
+        "he": "חוף הווילג' (Sea Village)"
+      },
+      "website_url": "https://www.rest.co.il/rest/23343810/",
+      "menu_url_he": null,
+      "image_url": "https://images.rest.co.il/Rests/Media/Logos/6dc47e1dae414b8e937e63cae45f9141.png",
+      "lat": 29.5145596,
+      "lng": 34.9263396,
+      "google_rating": 4.0,
+      "keto_score": 5,
+      "description": {
+        "en": "Sea Village is the beachfront restaurant at Village Beach on Eilat's southern beach strip (near Coral/Almog Beach), serving a casual Mediterranean beach-restaurant menu of grilled fish, mixed grill and salads alongside pizza and sandwiches for beachgoers. Keto diners can stick to the grilled fish and meat mains with a side salad, but the menu is built around a mixed beach crowd rather than around low-carb eating, so the keto options are solid rather than standout. It is a separate, distinctly-run establishment from The Last Refuge restaurant, with its own phone line and listings.",
+        "he": "מסעדת Sea Village פועלת על חוף הווילג' שברצועת החופים הדרומית של אילת (סמוך לחוף האלמוג), ומציעה תפריט מסעדת חוף ים-תיכונית קלילה עם דגים על האש, מיקס גריל וסלטים, לצד פיצות וסנדוויצ'ים למבלים בחוף. שומרי קיטו יכולים להתמקד בדגים ובבשרים הצלויים עם סלט בצד, אך התפריט מיועד בעיקר לקהל חוף מגוון ולא בנוי סביב תזונה דלת פחמימות, כך שהאפשרויות הקטוגניות סבירות אך לא יוצאות דופן. מדובר בעסק נפרד ובעל ניהול משלו, שונה ממסעדת המפלט האחרון, עם קו טלפון ורישומים עצמאיים משלו."
+      },
+      "distance_km": 5.37,
+      "taxi_fare_day": 36,
+      "taxi_fare_night": 45,
+      "currency": "ILS"
     }
   ]
 }
