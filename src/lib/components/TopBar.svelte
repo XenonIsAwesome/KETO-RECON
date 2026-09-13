@@ -2,7 +2,7 @@
   import type { Trip, ManifestEntry } from '../types';
   import { language, t } from '../language';
   import Slider from './Slider.svelte';
-  import { Menu, Map as MapIcon, List as ListIcon } from 'lucide-svelte';
+  import { Menu, Map as MapIcon, List as ListIcon, Binoculars } from 'lucide-svelte';
 
   let {
     trip,
@@ -35,7 +35,7 @@
 <header class="topbar">
   <div class="row-main">
     <div class="identity">
-      <h1 class="mono">KETO RECON</h1>
+      <h1 class="mono"><Binoculars size={18} class="logo-icon" /> KETO RECON</h1>
       <p class="hotel" dir={$language === 'he' ? 'rtl' : 'ltr'}>
         {t(trip.hotel.name, $language)} — {t(trip.location_name, $language)}
       </p>
@@ -116,9 +116,15 @@
   }
   .identity h1 {
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 1rem;
     color: var(--accent);
     letter-spacing: 0.1em;
+  }
+  .identity h1 :global(.logo-icon) {
+    flex-shrink: 0;
   }
   .hotel {
     margin: 0;
