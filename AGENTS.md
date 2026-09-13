@@ -65,6 +65,37 @@ without needing further instructions.**
 
 ## 2. Researching and adding restaurant data
 
+- **Find the full candidate list with the OpenStreetMap Overpass API
+  first — don't rely on web search alone.** General web searches
+  surface only whatever a handful of "best of" articles happen to
+  list, which misses most of what's actually nearby (this happened in
+  practice: an initial pass this way found only 6 restaurants near Dan
+  Hotel Eilat, when a proper query found 70+ within range). Query
+  Overpass for every `amenity=restaurant` (and optionally
+  `fast_food`) node/way within the trip's radius, e.g.:
+
+  ```
+  curl -s -G "https://overpass-api.de/api/interpreter" --data-urlencode \
+    'data=[out:json][timeout:25];(node["amenity"="restaurant"](around:7000,LAT,LNG);way["amenity"="restaurant"](around:7000,LAT,LNG););out center tags;' \
+    -o restaurants.json
+  ```
+
+  Then sort the results by actual distance from the hotel and work
+  through the closest ones first. Exclude anything across an
+  international border even if it's geometrically close (a border
+  crossing is not a normal dinner trip) — for Eilat specifically, that
+  means excluding anything east of about longitude 34.975 (Aqaba,
+  Jordan).
+- **OSM/TripAdvisor/aggregator data goes stale — verify each one is
+  still actually open.** In this same pass, roughly half the
+  Overpass-tagged candidates near Dan Hotel Eilat turned out to be
+  permanently closed (stale tags, or the restaurant simply closed
+  since it was last surveyed). Before writing an entry, check the
+  restaurant's own website or a recent, dated review for hours/a
+  functioning reservation link — a page with no closure notice and
+  live contact info is a good sign; an explicit "out of business" or
+  "closed" note from a search result is disqualifying no matter how
+  good the OSM/TripAdvisor data otherwise looks.
 - **Scope:** only include restaurants within the drive-time radius the
   user specifies for that trip (e.g. "15 minutes"). Use a mapping tool
   to estimate real drive times from the hotel, not straight-line

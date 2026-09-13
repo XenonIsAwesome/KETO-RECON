@@ -34,27 +34,17 @@
     });
   }
 
-  // Lucide "hotel" glyph — the hotel marker so it reads as "where you're
+  // Lucide "bed" glyph — the hotel marker so it reads as "where you're
   // staying" rather than another generic map pin.
   const HOTEL_COLOR = '#4fd8ff';
   const HOTEL_SIZE = 40;
-  const HOTEL_PATHS = [
-    'M10 22v-6.57',
-    'M12 11h.01',
-    'M12 7h.01',
-    'M14 15.43V22',
-    'M15 16a5 5 0 0 0-6 0',
-    'M16 11h.01',
-    'M16 7h.01',
-    'M8 11h.01',
-    'M8 7h.01',
-  ];
+  const BED_PATHS = ['M2 4v16', 'M2 8h18a2 2 0 0 1 2 2v10', 'M2 17h20', 'M6 8v9'];
 
   function makeHotelIcon(): L.DivIcon {
-    const paths = HOTEL_PATHS.map((d) => `<path d="${d}"/>`).join('');
+    const paths = BED_PATHS.map((d) => `<path d="${d}"/>`).join('');
     return L.divIcon({
       className: 'hotel-marker',
-      html: `<svg viewBox="0 0 24 24" width="${HOTEL_SIZE}" height="${HOTEL_SIZE}" fill="none" stroke="${HOTEL_COLOR}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/>${paths}</svg>`,
+      html: `<svg viewBox="0 0 24 24" width="${HOTEL_SIZE}" height="${HOTEL_SIZE}" fill="none" stroke="${HOTEL_COLOR}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`,
       iconSize: [HOTEL_SIZE, HOTEL_SIZE],
       iconAnchor: [HOTEL_SIZE / 2, HOTEL_SIZE / 2],
     });

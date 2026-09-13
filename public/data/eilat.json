@@ -120,6 +120,120 @@
       "taxi_fare_day": 38,
       "taxi_fare_night": 47,
       "currency": "ILS"
+    },
+    {
+      "id": "rak-dagim",
+      "name": { "en": "Rak Dagim", "he": "רק דגים" },
+      "website_url": "https://rak-dagim.rol.co.il/",
+      "menu_url_he": null,
+      "image_url": "https://rak-dagim.rol.co.il/wp-content/uploads/2024/03/1-1.jpg",
+      "lat": 29.5513191,
+      "lng": 34.9582022,
+      "google_rating": 4.8,
+      "keto_score": 7.0,
+      "description": {
+        "en": "A kosher dairy fish restaurant in the hotel district rated among Eilat's best, built around a Greek-style daily catch, appetizers like ceviche and smoked salmon, and generous salads. Solid keto fit on the fish and seafood mains, though the dairy-kosher format leans on bread and pasta sides more than a meat house would, so it sits a notch below the fish-and-meat spots for depth of options.",
+        "he": "מסעדת דגים חלבית כשרה באזור המלונות, המדורגת בין הטובות באילת, בנויה סביב דגת יום בסגנון יווני, מתאבנים כמו סביצ'ה וסלמון מעושן, וסלטים נדיבים. התאמה טובה לקטוגני במנות הדגים ופירות הים העיקריות, אך הפורמט החלבי-כשר נשען יותר על לחם ופסטה כתוספות מאשר בית בשר, כך שהיא מעט מתחת למסעדות הדגים-ובשר מבחינת עומק האפשרויות."
+      },
+      "distance_km": 0.8,
+      "taxi_fare_day": 18,
+      "taxi_fare_night": 19,
+      "currency": "ILS"
+    },
+    {
+      "id": "casa-do-brasil",
+      "name": { "en": "Casa do Brasil", "he": "קאזה דו ברזיל" },
+      "website_url": "https://casadobrasil.co.il/en/",
+      "menu_url_he": null,
+      "image_url": "https://cdn.prod.website-files.com/6a05d63ff5af5691df00ffef/6a09a7918642f87746970b8d_HERO%20(4).webp",
+      "lat": 29.5587036,
+      "lng": 34.9549929,
+      "google_rating": 4.0,
+      "keto_score": 8.5,
+      "description": {
+        "en": "An all-you-can-eat Brazilian churrascaria where pasadores carve continuous rounds of grilled meat skewers tableside, alongside a full salad bar, vegetarian dishes, and a kids' menu. About as strong a keto fit as a restaurant gets — the whole format is built around unlimited grilled meat — and the salad bar and vegetarian options mean non-keto companions are well looked after too.",
+        "he": "מסעדת בשר ברזילאית \"כל שאתה יכול לאכול\", שבה פסדורים חותכים ללא הפסקה שיפודי בשר על האש ישירות לשולחן, לצד בר סלטים מלא, מנות צמחוניות ותפריט ילדים. התאמה חזקה במיוחד לקטוגני — כל הפורמט בנוי סביב בשר על האש ללא הגבלה — ובר הסלטים והאפשרויות הצמחוניות דואגים גם לסועדים שאינם קטוגניים."
+      },
+      "distance_km": 1.5,
+      "taxi_fare_day": 21,
+      "taxi_fare_night": 23,
+      "currency": "ILS"
+    },
+    {
+      "id": "angelina",
+      "name": { "en": "Angelina", "he": "אנג'לינה" },
+      "website_url": "https://www.isrotel.com/eventsmain/hangouts/restaurants/eilat/isrotel-king-solomon/angelina-restaurant/",
+      "menu_url_he": null,
+      "image_url": "https://media.isrotel.co.il/umb/36883/angelina-1600x400.jpg",
+      "lat": 29.5523953,
+      "lng": 34.9614028,
+      "google_rating": 4.1,
+      "keto_score": 3.0,
+      "description": {
+        "en": "A kosher dairy Italian spot on the King's Wharf serving pizza, pasta, and antipasti with a marina view. Being dairy-kosher rules out meat entirely, and the menu leans hard into pasta, pizza dough, and dessert — there's cheese-based antipasti to build a plate around, but this is one of the weaker keto fits in town, better suited to the non-keto half of the table.",
+        "he": "מקום איטלקי חלבי כשר בטיילת המלכים, המגיש פיצה, פסטה ואנטיפסטי עם נוף למרינה. היותה חלבית-כשרה שוללת בשר לחלוטין, והתפריט נשען חזק על פסטה, בצק פיצה וקינוחים — יש אנטיפסטי מבוסס גבינות שאפשר לבנות סביבו צלחת, אך זו אחת ההתאמות החלשות יותר לקטוגני בעיר, ומתאימה יותר לחצי השני של השולחן שאינו קטוגני."
+      },
+      "distance_km": 0.6,
+      "taxi_fare_day": 17,
+      "taxi_fare_night": 18,
+      "currency": "ILS"
+    },
+    {
+      "id": "pago-pago",
+      "name": { "en": "Pago Pago", "he": "פאגו פאגו" },
+      "website_url": "https://pagopagorest.com/",
+      "menu_url_he": null,
+      "image_url": "https://pagopagorest.com/wp-content/uploads/2025/08/DSC04991-scaled.webp",
+      "lat": 29.5534851,
+      "lng": 34.9613526,
+      "google_rating": 4.0,
+      "keto_score": 8.0,
+      "description": {
+        "en": "A veteran (since 1986) fish, seafood, and meat restaurant built into a ship-shaped building surrounded by water at the marina, with a sushi bar and French/Italian-inflected Mediterranean cooking. A well-rounded keto option — grilled fish, seafood, and meat mains all feature — with sushi and pasta-adjacent sides covering the rest of the table.",
+        "he": "מסעדת דגים, פירות ים ובשר ותיקה (משנת 1986) בבניין בצורת ספינה המוקף מים במרינה, עם בר סושי ובישול ים-תיכוני בהשראה צרפתית-איטלקית. אופציה קטוגנית מאוזנת היטב — דגים על האש, פירות ים ומנות בשר כולם נוכחים בתפריט — כשהסושי והתוספות הקרובות לפסטה משלימים את שאר השולחן."
+      },
+      "distance_km": 0.7,
+      "taxi_fare_day": 18,
+      "taxi_fare_night": 19,
+      "currency": "ILS"
+    },
+    {
+      "id": "ginger-asian-kitchen",
+      "name": { "en": "Ginger Asian Kitchen", "he": "ג'ינג'ר" },
+      "website_url": "https://restaurantguru.com/Ginger-Eilat",
+      "menu_url_he": null,
+      "image_url": "https://img02.restaurantguru.com/c983-interior-Ginger-asian-kitchen-1.jpg",
+      "lat": 29.5513346,
+      "lng": 34.9518959,
+      "google_rating": 3.9,
+      "keto_score": 4.0,
+      "description": {
+        "en": "A modern pan-Asian kitchen and sushi bar known for udon and ramen noodle soups, seafood curries, and a substantial sushi menu. Like most noodle-and-rice-forward Asian menus this isn't a natural keto fit, but the sushi bar's sashimi and the seafood-forward mains (shrimp, calamari) give a keto diner workable options if they skip the noodles.",
+        "he": "מטבח פאן-אסייתי מודרני ובר סושי הידוע במרקי אודון ורמן, קארי פירות ים ותפריט סושי נרחב. כמו רוב התפריטים האסייתיים המבוססים על אטריות ואורז, זו אינה התאמה טבעית לקטוגני, אך הסשימי בבר הסושי והמנות עתירות פירות הים (שרימפס, קלמארי) נותנים לסועד הקטוגני אפשרויות סבירות אם מדלגים על האטריות."
+      },
+      "distance_km": 1.4,
+      "taxi_fare_day": 20,
+      "taxi_fare_night": 22,
+      "currency": "ILS"
+    },
+    {
+      "id": "pedro",
+      "name": { "en": "Pedro", "he": "פדרו" },
+      "website_url": "https://pedro.co.il/",
+      "menu_url_he": null,
+      "image_url": "https://static.wixstatic.com/media/558f94_6df97a46658142cfa72a4f3c5ce4f091f000.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/558f94_6df97a46658142cfa72a4f3c5ce4f091f000.jpg",
+      "lat": 29.5632854,
+      "lng": 34.9537727,
+      "google_rating": 4.6,
+      "keto_score": 8.6,
+      "description": {
+        "en": "Eilat's oldest meat restaurant (since 1968), a quiet garden chophouse away from the promenade crowds serving foie gras, artichoke fillet, stuffed calamari, and blue-cheese shrimp alongside its steaks. A very strong keto fit given the sheer range of rich, high-fat meat and seafood dishes, with wine and a relaxed atmosphere rounding out the experience for the whole table.",
+        "he": "המסעדה הבשרית הוותיקה ביותר באילת (משנת 1968), בית בשר שקט בגינה הרחק מהמולת הטיילת, המגיש פואה גרא, פילה ארטישוק, קלמארי ממולא ושרימפס בגבינה כחולה לצד הסטייקים. התאמה חזקה מאוד לקטוגני בזכות מגוון מנות הבשר ופירות הים העשירות והשומניות, עם יין ואווירה רגועה שמשלימים את החוויה לכל השולחן."
+      },
+      "distance_km": 2.0,
+      "taxi_fare_day": 23,
+      "taxi_fare_night": 26,
+      "currency": "ILS"
     }
   ]
 }
