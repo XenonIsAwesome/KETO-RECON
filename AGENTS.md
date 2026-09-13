@@ -173,11 +173,19 @@ though no two agents will compute bit-identical numbers.
 
 The initial build of this app was committed directly to `main`. **For
 all future changes** (new trips, data edits, code changes), work in a
-feature branch and open a merge request — do not commit directly to
+feature branch and open a pull request — do not commit directly to
 `main`.
 
 ## 5. Deployment
 
-Pushing to `main` (via a merged MR) triggers `.gitlab-ci.yml`'s `pages`
-job automatically, which builds and publishes the site to GitLab
-Pages. No manual deploy step is needed.
+This repo lives on GitHub. Pushing to `main` (via a merged PR) triggers
+`.github/workflows/deploy.yml` automatically, which builds the site
+with `npm ci && npm run build` and publishes `dist/` to GitHub Pages
+via `actions/upload-pages-artifact` + `actions/deploy-pages`. No manual
+deploy step is needed.
+
+The very first time this is set up on a new GitHub repo, the repo's
+**Settings → Pages → Build and deployment → Source** must be set to
+"GitHub Actions" (not "Deploy from a branch") for the workflow's
+publish step to actually take effect — a one-time manual step in the
+GitHub UI, not something the workflow file can set for itself.
