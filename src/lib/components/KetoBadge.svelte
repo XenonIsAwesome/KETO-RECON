@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { Flame } from 'lucide-svelte';
-
   let { score }: { score: number } = $props();
 
   let clamped = $derived(Math.max(0, Math.min(10, score)));
@@ -24,10 +22,7 @@
       transform="rotate(-90 20 20)"
     />
   </svg>
-  <div class="value-wrap">
-    <Flame size={11} />
-    <span class="value">{clamped.toFixed(1)}</span>
-  </div>
+  <span class="value">{clamped.toFixed(1)}</span>
 </div>
 
 <style>
@@ -44,16 +39,9 @@
     position: absolute;
     inset: 0;
   }
-  .value-wrap {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1px;
-    color: var(--accent);
-  }
   .value {
-    font-size: 0.6rem;
-    line-height: 1;
+    position: relative;
+    font-size: 0.7rem;
+    color: var(--accent);
   }
 </style>

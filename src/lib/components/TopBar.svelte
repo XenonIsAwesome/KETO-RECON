@@ -127,6 +127,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    /* dir=rtl (set inline for correct Hebrew bidi ordering) would
+       otherwise also flip this block's own text-align; pin it so only
+       the words change, not the line's position. */
+    text-align: left;
   }
   select {
     order: 2;

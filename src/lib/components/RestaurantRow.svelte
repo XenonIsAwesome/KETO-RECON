@@ -46,5 +46,6 @@
   .name {
     font-family: var(--font-display);
     flex: 1;
+    text-align: left;
   }
 </style>

@@ -92,6 +92,10 @@
     font-size: 1.1rem;
     font-weight: 600;
     flex: 1;
+    /* dir=rtl (set inline for correct Hebrew bidi ordering) would
+       otherwise also flip this element's own text-align; pin it so
+       only the words change, not its position in the row. */
+    text-align: left;
   }
   .meta {
     display: flex;
@@ -110,6 +114,7 @@
     font-size: 0.9rem;
     line-height: 1.4;
     color: var(--text);
+    text-align: left;
   }
   .actions {
     display: flex;

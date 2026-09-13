@@ -15,14 +15,20 @@
   const MIN_SIZE = 22;
   const MAX_SIZE = 44;
 
-  // Lucide "flame" glyph, filled solid so it reads clearly at small marker sizes.
-  const FLAME_PATH =
-    'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z';
+  // Lucide "utensils-crossed" glyph — a restaurant marker reads more
+  // clearly on a map than a generic pin or plain circle.
+  const UTENSILS_CROSSED_PATHS = [
+    'm16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8',
+    'M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7',
+    'm2.1 21.8 6.4-6.3',
+    'm19 5-7 7',
+  ];
 
   function makeIcon(size: number, color: string): L.DivIcon {
+    const paths = UTENSILS_CROSSED_PATHS.map((d) => `<path d="${d}"/>`).join('');
     return L.divIcon({
       className: 'restaurant-marker',
-      html: `<svg viewBox="0 0 24 24" width="${size}" height="${size}"><path d="${FLAME_PATH}" fill="${color}" /></svg>`,
+      html: `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`,
       iconSize: [size, size],
       iconAnchor: [size / 2, size / 2],
     });
