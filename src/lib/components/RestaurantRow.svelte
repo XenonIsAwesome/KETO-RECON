@@ -15,7 +15,7 @@
 
 <button class="row mono" class:selected id="restaurant-{restaurant.id}" onclick={open}>
   <span class="position">#{restaurant.position}</span>
-  <span class="name">{t(restaurant.name, $language)}</span>
+  <span class="name" dir={$language === 'he' ? 'rtl' : 'ltr'}>{t(restaurant.name, $language)}</span>
 </button>
 
 <style>

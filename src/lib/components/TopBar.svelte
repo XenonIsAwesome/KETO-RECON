@@ -2,7 +2,7 @@
   import type { Trip, ManifestEntry } from '../types';
   import { language, t } from '../language';
   import Slider from './Slider.svelte';
-  import { Menu, Languages, Map as MapIcon, List as ListIcon } from 'lucide-svelte';
+  import { Menu, Map as MapIcon, List as ListIcon } from 'lucide-svelte';
 
   let {
     trip,
@@ -22,10 +22,6 @@
 
   let menuOpen = $state(false);
 
-  function toggleLanguage() {
-    language.update((lang) => (lang === 'en' ? 'he' : 'en'));
-  }
-
   function toggleMenu() {
     menuOpen = !menuOpen;
   }
@@ -40,7 +36,9 @@
   <div class="row-main">
     <div class="identity">
       <h1 class="mono">KETO RECON</h1>
-      <p class="hotel">{t(trip.hotel.name, $language)} — {t(trip.location_name, $language)}</p>
+      <p class="hotel" dir={$language === 'he' ? 'rtl' : 'ltr'}>
+        {t(trip.hotel.name, $language)} — {t(trip.location_name, $language)}
+      </p>
     </div>
     {#if manifest.length > 1}
       <select
@@ -53,10 +51,24 @@
         {/each}
       </select>
     {/if}
-    <button class="lang-toggle mono" onclick={toggleLanguage} aria-label="Toggle language">
-      <Languages size={16} />
-      {$language.toUpperCase()}
-    </button>
+    <div class="lang-switch">
+      <button
+        class:active={$language === 'en'}
+        onclick={() => language.set('en')}
+        aria-label="English"
+        title="English"
+      >
+        🇺🇸
+      </button>
+      <button
+        class:active={$language === 'he'}
+        onclick={() => language.set('he')}
+        aria-label="עברית"
+        title="עברית"
+      >
+        🇮🇱
+      </button>
+    </div>
     <div class="hamburger-wrap">
       <button
         class="hamburger"
@@ -124,21 +136,34 @@
     border-radius: var(--radius);
     padding: 0.25rem 0.5rem;
   }
-  .lang-toggle {
+  .lang-switch {
     order: 2;
+    display: flex;
+    gap: 0.25rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.2rem;
+  }
+  .lang-switch button {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.6rem;
     background: none;
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    border-radius: var(--radius);
-    padding: 0.35rem 0.6rem;
-    font-size: 0.75rem;
+    border: 1px solid transparent;
+    border-radius: calc(var(--radius) - 2px);
+    font-size: 1rem;
+    line-height: 1;
+    opacity: 0.45;
+    filter: grayscale(60%);
   }
-  .lang-toggle:hover {
-    color: var(--accent);
+  .lang-switch button.active {
+    opacity: 1;
+    filter: none;
     border-color: var(--accent);
+    background: var(--bg-panel);
   }
   .hamburger-wrap {
     order: 2;

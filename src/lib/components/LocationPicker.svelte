@@ -12,7 +12,9 @@
   <ul>
     {#each manifest as entry (entry.slug)}
       <li>
-        <button onclick={() => onSelect(entry.slug)}>{t(entry.location_name, $language)}</button>
+        <button onclick={() => onSelect(entry.slug)} dir={$language === 'he' ? 'rtl' : 'ltr'}>
+          {t(entry.location_name, $language)}
+        </button>
       </li>
     {/each}
   </ul>

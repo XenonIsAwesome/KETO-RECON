@@ -3,7 +3,6 @@
   import { loadManifest, loadTrip } from './lib/dataLoader';
   import { trip as tripStore } from './lib/stores';
   import { route } from './lib/router';
-  import { language } from './lib/language';
   import type { ManifestEntry } from './lib/types';
   import LocationPicker from './lib/components/LocationPicker.svelte';
   import TripView from './lib/components/TripView.svelte';
@@ -41,7 +40,7 @@
   }
 </script>
 
-<div id="app" class="scanlines" dir={$language === 'he' ? 'rtl' : 'ltr'}>
+<div id="app" class="scanlines">
   {#if loading}
     <div class="status-screen mono">LOADING RECON DATA…</div>
   {:else if error}

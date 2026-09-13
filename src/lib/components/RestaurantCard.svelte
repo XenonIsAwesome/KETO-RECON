@@ -20,7 +20,13 @@
   <div class="body">
     <div class="header-row">
       <span class="position mono">#{restaurant.position}</span>
-      <a class="name" href={restaurant.website_url} target="_blank" rel="noopener noreferrer">
+      <a
+        class="name"
+        href={restaurant.website_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        dir={$language === 'he' ? 'rtl' : 'ltr'}
+      >
         {t(restaurant.name, $language)}
       </a>
       <KetoBadge score={restaurant.keto_score} />
@@ -33,7 +39,9 @@
         night {currencySymbol(restaurant.currency)}{restaurant.taxi_fare_night}
       </span>
     </div>
-    <p class="description">{t(restaurant.description, $language)}</p>
+    <p class="description" dir={$language === 'he' ? 'rtl' : 'ltr'}>
+      {t(restaurant.description, $language)}
+    </p>
     <div class="actions">
       <a class="link" href={restaurant.website_url} target="_blank" rel="noopener noreferrer">
         <ExternalLink size={14} /> Website
