@@ -34,6 +34,32 @@
     });
   }
 
+  // Lucide "hotel" glyph — the hotel marker so it reads as "where you're
+  // staying" rather than another generic map pin.
+  const HOTEL_COLOR = '#4fd8ff';
+  const HOTEL_SIZE = 40;
+  const HOTEL_PATHS = [
+    'M10 22v-6.57',
+    'M12 11h.01',
+    'M12 7h.01',
+    'M14 15.43V22',
+    'M15 16a5 5 0 0 0-6 0',
+    'M16 11h.01',
+    'M16 7h.01',
+    'M8 11h.01',
+    'M8 7h.01',
+  ];
+
+  function makeHotelIcon(): L.DivIcon {
+    const paths = HOTEL_PATHS.map((d) => `<path d="${d}"/>`).join('');
+    return L.divIcon({
+      className: 'hotel-marker',
+      html: `<svg viewBox="0 0 24 24" width="${HOTEL_SIZE}" height="${HOTEL_SIZE}" fill="none" stroke="${HOTEL_COLOR}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/>${paths}</svg>`,
+      iconSize: [HOTEL_SIZE, HOTEL_SIZE],
+      iconAnchor: [HOTEL_SIZE / 2, HOTEL_SIZE / 2],
+    });
+  }
+
   let container: HTMLDivElement;
   let map: L.Map;
   let markers = new Map<string, L.Marker>();
@@ -46,7 +72,7 @@
     if (!$trip || !map) return;
     map.setView([$trip.hotel.lat, $trip.hotel.lng], 14);
     if (hotelMarker) map.removeLayer(hotelMarker);
-    hotelMarker = L.marker([$trip.hotel.lat, $trip.hotel.lng])
+    hotelMarker = L.marker([$trip.hotel.lat, $trip.hotel.lng], { icon: makeHotelIcon() })
       .addTo(map)
       .bindPopup(`<strong>${t($trip.hotel.name, lang)}</strong>`);
   }
@@ -148,7 +174,8 @@
     height: 100%;
     min-height: 260px;
   }
-  :global(.restaurant-marker) {
+  :global(.restaurant-marker),
+  :global(.hotel-marker) {
     background: transparent;
     border: none;
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6));
