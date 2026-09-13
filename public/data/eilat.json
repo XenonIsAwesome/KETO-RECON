@@ -1,7 +1,13 @@
 {
-  "location_name": { "en": "Dan Hotel Eilat", "he": "מלון דן אילת" },
+  "location_name": {
+    "en": "Dan Hotel Eilat",
+    "he": "מלון דן אילת"
+  },
   "hotel": {
-    "name": { "en": "Dan Eilat", "he": "דן אילת" },
+    "name": {
+      "en": "Dan Eilat",
+      "he": "דן אילת"
+    },
     "lat": 29.5486649,
     "lng": 34.9655035,
     "address": "HaYam Street 4, North Beach, Eilat, Israel"
@@ -9,7 +15,10 @@
   "restaurants": [
     {
       "id": "les-sardines",
-      "name": { "en": "Les Sardines", "he": "לה סרדין" },
+      "name": {
+        "en": "Les Sardines",
+        "he": "לה סרדין"
+      },
       "website_url": "https://les-sardines.net/home-en/",
       "menu_url_he": null,
       "image_url": "https://les-sardines.net/wp-content/uploads/2024/08/la-sardin-LOGO1-1024x581.png",
@@ -28,7 +37,10 @@
     },
     {
       "id": "giraffe-noodle-bar",
-      "name": { "en": "Giraffe Noodle Bar", "he": "ג'ירף" },
+      "name": {
+        "en": "Giraffe Noodle Bar",
+        "he": "ג'ירף"
+      },
       "website_url": "https://en.giraffe.co.il/",
       "menu_url_he": null,
       "image_url": "https://media.getmood.io/warehouse/dynamic/299427.jpg",
@@ -47,7 +59,10 @@
     },
     {
       "id": "ranch-house",
-      "name": { "en": "Ranch House", "he": "ראנץ' האוס" },
+      "name": {
+        "en": "Ranch House",
+        "he": "ראנץ' האוס"
+      },
       "website_url": "https://www.isrotelexclusivecollection.com/isr-eventsmain/hangouts/restaurants/eilat/royal-beach/ranch-house/",
       "menu_url_he": null,
       "image_url": "https://cdn.speedsize.com/61a206a8-07c4-46c9-b2ac-07edd20dd59d/https://media.isrotel.co.il/umb/22175/_dsf5607.jpg?anchor=center&mode=crop&width=400&height=297&rnd=133836521140000000/f_auto",
@@ -66,7 +81,10 @@
     },
     {
       "id": "pastory",
-      "name": { "en": "Pastory", "he": "פסטורי" },
+      "name": {
+        "en": "Pastory",
+        "he": "פסטורי"
+      },
       "website_url": "https://pastory.co.il/",
       "menu_url_he": "https://www.pastory.co.il/תפריט",
       "image_url": "https://static.wixstatic.com/media/ac0b37_721a73ec18a34851903d0a848aca7449~mv2.jpg/v1/fill/w_1393,h_929,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ac0b37_721a73ec18a34851903d0a848aca7449~mv2.jpg",
@@ -85,7 +103,10 @@
     },
     {
       "id": "eddies-hideaway",
-      "name": { "en": "Eddie's Hideaway", "he": "המחבוא של אדי" },
+      "name": {
+        "en": "Eddie's Hideaway",
+        "he": "המחבוא של אדי"
+      },
       "website_url": "https://eddieshideaway.com/en/main/",
       "menu_url_he": null,
       "image_url": "https://eddieshideaway.com/wp-content/uploads/2026/09/e0ed6070-ab95-4b25-b6c1-1012943f7649-1024x972.webp",
@@ -104,7 +125,10 @@
     },
     {
       "id": "the-last-refuge",
-      "name": { "en": "The Last Refuge", "he": "המפלט האחרון" },
+      "name": {
+        "en": "The Last Refuge",
+        "he": "המפלט האחרון"
+      },
       "website_url": "https://www.hamiflat-eilat.co.il/",
       "menu_url_he": null,
       "image_url": "https://irp.cdn-website.com/10ae4197/dms3rep/multi/opt/spagetti-2304w.jpg",
@@ -123,7 +147,10 @@
     },
     {
       "id": "rak-dagim",
-      "name": { "en": "Rak Dagim", "he": "רק דגים" },
+      "name": {
+        "en": "Rak Dagim",
+        "he": "רק דגים"
+      },
       "website_url": "https://rak-dagim.rol.co.il/",
       "menu_url_he": null,
       "image_url": "https://rak-dagim.rol.co.il/wp-content/uploads/2024/03/1-1.jpg",
@@ -142,7 +169,10 @@
     },
     {
       "id": "casa-do-brasil",
-      "name": { "en": "Casa do Brasil", "he": "קאזה דו ברזיל" },
+      "name": {
+        "en": "Casa do Brasil",
+        "he": "קאזה דו ברזיל"
+      },
       "website_url": "https://casadobrasil.co.il/en/",
       "menu_url_he": null,
       "image_url": "https://cdn.prod.website-files.com/6a05d63ff5af5691df00ffef/6a09a7918642f87746970b8d_HERO%20(4).webp",
@@ -161,7 +191,10 @@
     },
     {
       "id": "angelina",
-      "name": { "en": "Angelina", "he": "אנג'לינה" },
+      "name": {
+        "en": "Angelina",
+        "he": "אנג'לינה"
+      },
       "website_url": "https://www.isrotel.com/eventsmain/hangouts/restaurants/eilat/isrotel-king-solomon/angelina-restaurant/",
       "menu_url_he": null,
       "image_url": "https://media.isrotel.co.il/umb/36883/angelina-1600x400.jpg",
@@ -180,7 +213,10 @@
     },
     {
       "id": "pago-pago",
-      "name": { "en": "Pago Pago", "he": "פאגו פאגו" },
+      "name": {
+        "en": "Pago Pago",
+        "he": "פאגו פאגו"
+      },
       "website_url": "https://pagopagorest.com/",
       "menu_url_he": null,
       "image_url": "https://pagopagorest.com/wp-content/uploads/2025/08/DSC04991-scaled.webp",
@@ -199,7 +235,10 @@
     },
     {
       "id": "ginger-asian-kitchen",
-      "name": { "en": "Ginger Asian Kitchen", "he": "ג'ינג'ר" },
+      "name": {
+        "en": "Ginger Asian Kitchen",
+        "he": "ג'ינג'ר"
+      },
       "website_url": "https://restaurantguru.com/Ginger-Eilat",
       "menu_url_he": null,
       "image_url": "https://img02.restaurantguru.com/c983-interior-Ginger-asian-kitchen-1.jpg",
@@ -218,7 +257,10 @@
     },
     {
       "id": "pedro",
-      "name": { "en": "Pedro", "he": "פדרו" },
+      "name": {
+        "en": "Pedro",
+        "he": "פדרו"
+      },
       "website_url": "https://pedro.co.il/",
       "menu_url_he": null,
       "image_url": "https://static.wixstatic.com/media/558f94_6df97a46658142cfa72a4f3c5ce4f091f000.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/558f94_6df97a46658142cfa72a4f3c5ce4f091f000.jpg",
@@ -233,6 +275,204 @@
       "distance_km": 2.0,
       "taxi_fare_day": 23,
       "taxi_fare_night": 26,
+      "currency": "ILS"
+    },
+    {
+      "id": "thai-story",
+      "name": {
+        "en": "Thai Story",
+        "he": "תאיסטורי"
+      },
+      "website_url": "https://www.thaistory.co.il/",
+      "menu_url_he": "https://www.thaistory.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98",
+      "image_url": "https://static.wixstatic.com/media/ac0b37_46e3a239a29445808c49d15d03c61d27~mv2.jpg",
+      "lat": 29.5515815,
+      "lng": 34.9590092,
+      "google_rating": 4.0,
+      "keto_score": 5,
+      "description": {
+        "en": "Thai Story is an authentic Thai and sushi restaurant in the heart of Eilat's hotel district, with Thai chefs cooking with spices imported directly from Thailand and vegetables grown specially for them by Arava farmers. For keto diners, the coconut-milk curries (green, red, and coconut curry) built around chicken, beef, or shrimp are naturally high in fat and can be ordered without rice, and the sashimi and nigiri section offers rice-free protein options. The menu also carries plenty of Pad Thai noodle dishes, dumplings, spring rolls, and sushi rolls, so it comfortably serves non-keto companions too, even though those particular items are carb-heavy.",
+        "he": "תאיסטורי היא מסעדה תאילנדית אותנטית וסושי בלב אזור המלונות באילת, עם שפים תאילנדים שמבשלים עם תבלינים המיובאים ישירות מתאילנד וירקות שגדלים במיוחד עבורם אצל חקלאי הערבה. לסועדי קטו, הקארי עם חלב קוקוס (ירוק, אדום וקוקוס) על בסיס עוף, בקר או שרימפס עשיר בשומן וניתן להזמינו ללא אורז, וגם מדור הסשימי והניגירי מציע חלבון בלי פחמימות מיותרות. התפריט כולל גם המון מנות אטריות כמו פאד תאי, דמפלינגס, אגרולים וגלילי סושי, כך שהוא משרת בנוחות גם סועדים שאינם קטוגניים, אף שהמנות הללו עתירות פחמימה."
+      },
+      "distance_km": 0.707,
+      "taxi_fare_day": 18,
+      "taxi_fare_night": 19,
+      "currency": "ILS"
+    },
+    {
+      "id": "maman-beach",
+      "name": {
+        "en": "Maman Beach",
+        "he": "חוף ממן"
+      },
+      "website_url": "https://www.rest.co.il/rest/5169890/",
+      "menu_url_he": "https://misadot.rol.co.il/sites/hof-maman/menu.html",
+      "image_url": "https://images.rest.co.il/Rests/Default/3/1_70025020.jpg",
+      "lat": 29.5495199,
+      "lng": 34.9589682,
+      "google_rating": 2.7,
+      "keto_score": 7,
+      "description": {
+        "en": "Maman Beach is a beachfront bar-restaurant on a private stretch of Red Sea shoreline beside the Red Sea Hotel promenade, serving fresh grilled fish, grilled meats, salads and a full bar, with live music and karaoke nights on summer weekends. For keto diners, the grilled whole sea bream, Norwegian salmon and grilled lamb ribs or kebab straight off the charcoal grill are excellent high-fat, low-carb mains, and the fresh salad selection makes an easy low-carb side. The menu also carries pasta, pizza and sandwiches, so non-keto companions have plenty of options too, making this more of a solid all-around grill-and-fish spot than a dedicated keto restaurant.",
+        "he": "חוף ממן היא בר-מסעדת חוף על שובל פרטי בחוף הצפוני של אילת, לצד מלון הים האדום, שמגישה דגים טריים על הגריל, בשרים על האש, סלטים ובר עשיר, לצד מוזיקה חיה וערבי קריוקי בסופי שבוע בקיץ. מבחינה קטוגנית, הדניס השלם והסלמון הנורווגי הצלויים על הגריל, וכן צלעות וקבב הכבש, הם בחירות מצוינות עתירות שומן ודלות פחמימה, ואפשר להשלים את הארוחה בסלט טרי מהתפריט. עם זאת התפריט כולל גם פסטות, פיצות וסנדוויצ'ים, כך שגם סועדים שאינם שומרים על קטו ימצאו מה לאכול - זו לא מסעדה קטוגנית ייעודית אלא מסעדת דגים ובשרים כללית עם אפשרויות טובות לתפריט קטוגני."
+      },
+      "distance_km": 0.639,
+      "taxi_fare_day": 18,
+      "taxi_fare_night": 19,
+      "currency": "ILS"
+    },
+    {
+      "id": "cafe-optimi",
+      "name": {
+        "en": "Cafe Optimi",
+        "he": "קפה אופטימי"
+      },
+      "website_url": "https://cafeoptimi.co.il/",
+      "menu_url_he": "https://cafeoptimi.co.il/Menu?culture=he-IL",
+      "image_url": "https://cafeoptimi.co.il/images/slide1.jpg",
+      "lat": 29.5507146,
+      "lng": 34.9554062,
+      "google_rating": 4.2,
+      "keto_score": 6,
+      "description": {
+        "en": "Cafe Optimi is a long-running dairy restaurant (fish and dairy only, no meat) on Eilat's northern promenade, blending Italian and Israeli home-style cooking with both an air-conditioned dining room and a terrace over the Red Sea. Its Caesar salad, halloumi and burrata plates, and salmon fillet served in cream sauce are naturally low-carb and high-fat, making them solid keto choices, and the rich egg-based breakfasts (eggs with Bulgarian cheese, avocado and tuna) can easily be kept keto by skipping the bread. That said, the menu leans heavily on pasta, pizza, ravioli and quiches for its non-keto guests, so keto diners need to pick selectively rather than order from most of the menu.",
+        "he": "קפה אופטימי היא מסעדה חלבית ותיקה על הטיילת הצפונית של אילת (רק דגים וחלב, בלי בשר), עם מטבח איטלקי-ישראלי ביתי, אולם ממוזג וגם מרפסת מול הים האדום. סלט קיסר, מנות הלומי ובוראטה, ופילה סלמון ברוטב שמנת הם מנות טבעיות דלות פחמימה ועתירות שומן שמתאימות מצוין לדיאטה קטוגנית, וגם ארוחות הבוקר העשירות (ביצים עם גבינה בולגרית, אבוקדו וטונה) קלות להתאמה לקטו בלי הלחם. עם זאת, עיקר התפריט מבוסס פסטות, פיצות, רביולי וקישים המיועדים לסועדים לא-קטוגניים, כך שמי שבדיאטה קטוגנית צריך לבחור בקפידה ולא להזמין מרוב התפריט."
+      },
+      "distance_km": 1.0,
+      "taxi_fare_day": 19,
+      "taxi_fare_night": 21,
+      "currency": "ILS"
+    },
+    {
+      "id": "lalo",
+      "name": {
+        "en": "Lalo",
+        "he": "ללו"
+      },
+      "website_url": "https://www.rest.co.il/rest/9237140/",
+      "menu_url_he": null,
+      "image_url": "https://images.rest.co.il/Rests/Default/3/1_70025020.jpg",
+      "lat": 29.5611879,
+      "lng": 34.95345,
+      "google_rating": 4.0,
+      "keto_score": 4,
+      "description": {
+        "en": "Lalo is a home-style Moroccan-Israeli restaurant that has run out of a residential Eilat neighborhood since 1972, serving lunch only, with couscous made fresh daily as its signature dish alongside meat and poultry stews (oxtail, head meat, tagine-style dishes) cooked with okra, green beans and other seasonal vegetables. The stewed meats themselves are fatty, slow-cooked and low in carbohydrate, so a keto diner can do well ordering meat portions with the vegetable sides and skipping the couscous and bread, but because couscous is the restaurant's central, most-famous dish, the overall menu is built around a high-carb staple rather than around keto eating.",
+        "he": "ללו היא מסעדה מרוקאית-ישראלית ביתית הפועלת משכונת מגורים באילת עוד משנת 1972, מוגשת רק בשעות הצהריים, כשהקוסקוס הטרי המוכן מדי יום הוא מנת הדגל, לצד תבשילי בשר ועוף (זנב שור, ראש, מנות בסגנון טאג'ין) המתבשלים עם במיה, שעועית ירוקה וירקות עונתיים נוספים. תבשילי הבשר עצמם שמנים, מבושלים לאט ודלי פחמימה, כך שסועד קטוגני יכול להסתדר היטב עם מנת בשר ותוספת ירקות ולוותר על הקוסקוס והלחם, אבל מכיוון שהקוסקוס הוא המנה המרכזית והמפורסמת ביותר של המקום, התפריט הכללי בנוי סביב מרכיב עתיר פחמימות ולא סביב אכילה קטוגנית."
+      },
+      "distance_km": 1.82,
+      "taxi_fare_day": 22,
+      "taxi_fare_night": 25,
+      "currency": "ILS"
+    },
+    {
+      "id": "fucaccia",
+      "name": {
+        "en": "Fucaccia",
+        "he": "פוקצ'ה"
+      },
+      "website_url": "https://www.rest.co.il/rest/80294875/",
+      "menu_url_he": null,
+      "image_url": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwk_Ykda1eeAYL0ipUx9ybUpPZG8JjY5qlbQfEG7FM4X-j8KmdbIacHLWTehNXuLL5D5r5MVkd6b9z4xCGJRPc1QfDWSv5Y4xk78ij4nZdN_qLYyJS6Lo8gbvofDMklBD7zGWKhxw=w480-h300-k-n-rw",
+      "lat": 29.5537386,
+      "lng": 34.945611,
+      "google_rating": 4.6,
+      "keto_score": 4,
+      "description": {
+        "en": "Fucaccia is a sit-down Italian dairy restaurant in Eilat's Mor Center, known for hand-made focaccias, pastas, salads, and fish dishes prepared fresh on-site. Diners praise its cheese-forward ravioli and Israeli-style breakfasts with eggs and creamy spreads. For keto eaters the salads, grilled fish, and cheese plates are solid low-carb, high-fat choices, though the restaurant's signature focaccia breads and pastas are its main draw and are not keto-friendly. It works well for mixed groups since non-keto diners have plenty of bread and pasta options while keto diners can build a meal around fish and cheese.",
+        "he": "פוקצ'ה היא מסעדה חלבית איטלקית לישיבה במרכז מור באילת, המתמחה בפוקצ'ות בעבודת יד, פסטות, סלטים ודגים טריים. הביקורות משבחות את הרביולי העשיר בגבינות ואת ארוחות הבוקר הישראליות עם ביצים וממרחים. לסועד הקטוגני יש אפשרויות סבירות כמו סלטים, דג בגריל ומנות גבינה עתירות שומן ודלות פחמימה, אך עיקר התפריט מבוסס פוקצ'ות ופסטות שאינן מתאימות לתזונה קטוגנית. המקום מצוין לקבוצה מעורבת: מי שלא בקטו ייהנה משפע לחם ופסטה, ומי שכן יכול להרכיב ארוחה סביב דג וגבינות."
+      },
+      "distance_km": 2.0,
+      "taxi_fare_day": 23,
+      "taxi_fare_night": 26,
+      "currency": "ILS"
+    },
+    {
+      "id": "kfot-tmarim",
+      "name": {
+        "en": "Kfot Tmarim (Date Palms)",
+        "he": "כפות תמרים"
+      },
+      "website_url": "https://www.capottmarim.co.il/en/main-2/",
+      "menu_url_he": null,
+      "image_url": "https://www.aravadesert.co.il/uploads/w-640/1548055707.2142.jpg",
+      "lat": 29.5817638,
+      "lng": 34.963477,
+      "google_rating": 4.4,
+      "keto_score": 5,
+      "description": {
+        "en": "Kfot Tmarim is a large kosher home-style restaurant and buffet hall at Kibbutz Eilot, a few minutes north of Eilat, seating 350 and famous for its Friday-night all-you-can-eat spread with over 100 dishes. The buffet includes an asado grill station and a fresh salad bar alongside shawarma, sushi, and homemade stews, so keto diners can fill up on grilled meat, salads, and dressings while skipping the breads and desserts. Because it's priced by weight and structured as a buffet, it's easy to stay high-fat and low-carb without a fixed menu, though the sheer amount of rice, bread, and pastry on offer means it's really built for non-keto crowds first.",
+        "he": "כפות תמרים היא מסעדת בופה ביתית וכשרה בקיבוץ אילות, דקות אחדות מצפון לאילת, עם 350 מקומות ישיבה ובופה ליל שישי האגדי הכולל מעל 100 מנות. הבופה כולל עמדת אסאדו וסלטים טריים לצד שווארמה, סושי ותבשילי בית, כך שסועד קטוגני יכול להתמקד בבשר על האש ובסלטים ולדלג על הלחמים והקינוחים. בזכות המבנה של תשלום לפי משקל וסגנון הבופה קל לשמור על תזונה עתירת שומן ודלת פחמימה, אך השפע העצום של אורז, לחם ומאפים מעיד שהמקום מיועד קודם כל לקהל הרחב ולא לקטוגני."
+      },
+      "distance_km": 3.69,
+      "taxi_fare_day": 30,
+      "taxi_fare_night": 35,
+      "currency": "ILS"
+    },
+    {
+      "id": "lawrence",
+      "name": {
+        "en": "Lawrence",
+        "he": "לורנס"
+      },
+      "website_url": "https://www.lawrence-eilat.co.il/",
+      "menu_url_he": "https://www.lawrence-eilat.co.il/menu",
+      "image_url": "https://img02.restaurantguru.com/c691-Lawrence-Eilat-chocolate-mousse.jpg",
+      "lat": 29.5496,
+      "lng": 34.9668,
+      "google_rating": 4.6,
+      "keto_score": 7,
+      "description": {
+        "en": "Lawrence is an upscale kosher French meat restaurant inside the Herods Vitalis hotel, offering tableside steaks, foie gras, salmon, lamb ribs, and entrecote alongside a mushroom-tortellini starter and desserts like chocolate mousse. This is a strong keto pick: entrecote, sirloin, foie gras, and salmon are all naturally high-fat and low-carb, and the kitchen also accommodates gluten-free requests. It isn't a specialty keto restaurant, though — the tortellini starter, bread service, and rich desserts give non-keto diners plenty to enjoy too, which along with its high rating makes it a solid choice for a mixed table.",
+        "he": "לורנס היא מסעדת בשרים צרפתית כשרה ויוקרתית במלון הרודס ויטליס, המגישה סטייקים לשולחן, פואה גרא, סלמון, צלעות כבש ואנטריקוט, לצד מנה ראשונה של טורטליני פטריות וקינוחים כמו מוס שוקולד. זו בחירה קטוגנית מצוינת: אנטריקוט, סינטה, פואה גרא וסלמון הם מטבעם עתירי שומן ודלי פחמימה, והמטבח גם נענה לבקשות ללא גלוטן. עם זאת זו לא מסעדת קטו ייעודית - מנת הטורטליני, הלחם והקינוחים העשירים מספקים גם למי שלא שומר על קטו, מה שיחד עם הדירוג הגבוה הופך אותה לבחירה טובה לשולחן מעורב."
+      },
+      "distance_km": 0.16,
+      "taxi_fare_day": 16,
+      "taxi_fare_night": 16,
+      "currency": "ILS"
+    },
+    {
+      "id": "whale-burger",
+      "name": {
+        "en": "Whale (Leviathan)",
+        "he": "לוויתן"
+      },
+      "website_url": "https://whale-eilat.com/",
+      "menu_url_he": null,
+      "image_url": "https://media.timeout.com/images/105997153/750/422/image.jpg",
+      "lat": 29.5496,
+      "lng": 34.9668,
+      "google_rating": 4.4,
+      "keto_score": 3,
+      "description": {
+        "en": "Whale (formerly a fine-dining seafood restaurant by chef Lior Raphael and Inbar Shapira) reinvented itself after the pandemic into a stripped-down gourmet burger concept on Eilat's North Beach promenade, now serving just two headline dishes: the shrimp burger and the 'Big Mess' beef-and-asado burger, plus sides like mac and cheese and cheese-topped fried broccoli. The beef and shrimp patties are naturally high-fat and low-carb, and the cheesy broccoli side is a decent keto pick, but the brioche buns, hand-cut fries, and mac and cheese make the core menu carb-heavy unless you ask to drop the bun. It's a fun stop for a burger-loving mixed group, but keto diners will need to customize their order rather than eat straight off the menu.",
+        "he": "לוויתן (לשעבר מסעדת דגים ומטבח שף יוקרתית של ליאור רפאלי ואינבר שפירא) הפכה אחרי הקורונה לקונספט המבורגרים מצומצם על טיילת חוף הצפון באילת, ומגישה כיום רק שתי מנות עיקריות - המבורגר שרימפס והמבורגר 'לה ביג מס' בקר ואסאדו, לצד תוספות כמו מק אנד צ'יז וברוקולי מטוגן בגבינה. הקציצה עצמה, בין אם בקר או שרימפס, עתירת שומן ודלת פחמימה, וגם הברוקולי בגבינה הוא בחירה קטוגנית סבירה, אבל לחמניית הבריוש, הצ'יפס והמק אנד צ'יז הופכים את התפריט הבסיסי לעתיר פחמימה אלא אם מבקשים לוותר על הלחמנייה. זו עצירה כיפית לחבורה אוהבת המבורגרים, אך סועד קטוגני יצטרך להתאים אישית את ההזמנה ולא להזמין ישר מהתפריט."
+      },
+      "distance_km": 0.16,
+      "taxi_fare_day": 16,
+      "taxi_fare_night": 16,
+      "currency": "ILS"
+    },
+    {
+      "id": "cafe-boulevard",
+      "name": {
+        "en": "Cafe Boulevard",
+        "he": "קפה בולבארד"
+      },
+      "website_url": "https://www.cafeboulevard.co.il/",
+      "menu_url_he": "https://www.cafeboulevard.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98",
+      "image_url": "https://static.wixstatic.com/media/ac0b37_ecb25a9502754c81ac4a71b99c9bf3ea~mv2.jpg",
+      "lat": 29.5511655,
+      "lng": 34.9627597,
+      "google_rating": 4.1,
+      "keto_score": 6,
+      "description": {
+        "en": "Cafe Boulevard is a dairy cafe on the boutique shopping boulevard of the Isrotel Royal Garden hotel, known for rich breakfasts, sourdough breads, healthy salads, and dishes like burrata salad and caramelized miso salmon with risotto. Keto diners have real options here — the burrata salad and salmon are high-fat, low-carb centerpieces, and roasted vegetable sides can substitute for the risotto or bread. It also keeps everyone happy with sourdough, sandwiches, and desserts like chocolate cake and cheesecake for non-keto companions, and its solid 4.1 TripAdvisor rating reflects consistently good execution.",
+        "he": "קפה בולבארד הוא בית קפה חלבי בשדרת הקניות הבוטיקית של מלון ישרוטל רויאל גארדן, הידוע בארוחות בוקר עשירות, לחמי מחמצת, סלטים בריאים ומנות כמו סלט בורטה וסלמון מקורמל במיסו עם ריזוטו. לסועד קטוגני יש כאן אפשרויות אמיתיות - סלט הבורטה והסלמון הם מנות עתירות שומן ודלות פחמימה, ואפשר להחליף את הריזוטו או הלחם בירקות קלויים. המקום גם משמח את כל השולחן עם לחם מחמצת, כריכים וקינוחים כמו עוגת שוקולד וצ'יזקייק למי שלא שומר על קטו, והדירוג הסביר של 4.1 בטריפאדוויזור משקף ביצוע עקבי וטוב."
+      },
+      "distance_km": 0.38,
+      "taxi_fare_day": 17,
+      "taxi_fare_night": 17,
       "currency": "ILS"
     }
   ]
