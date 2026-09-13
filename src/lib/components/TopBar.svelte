@@ -1,54 +1,106 @@
 <script lang="ts">
   import type { Trip, ManifestEntry } from '../types';
+  import { language, t } from '../language';
   import Slider from './Slider.svelte';
-  import { Menu } from 'lucide-svelte';
+  import { Menu, Languages, Map as MapIcon, List as ListIcon } from 'lucide-svelte';
 
   let {
     trip,
     manifest,
+    currentSlug,
     onChangeTrip,
-    onToggleMenu,
+    activePanel,
+    onSelectPanel,
   }: {
     trip: Trip;
     manifest: ManifestEntry[];
+    currentSlug: string;
     onChangeTrip: (slug: string) => void;
-    onToggleMenu: () => void;
+    activePanel: 'map' | 'list';
+    onSelectPanel: (panel: 'map' | 'list') => void;
   } = $props();
 
-  function handleTripChange(e: Event) {
-    const value = (e.target as HTMLSelectElement).value;
-    const entry = manifest.find((m) => m.location_name === value);
-    if (entry) onChangeTrip(entry.slug);
+  let menuOpen = $state(false);
+
+  function toggleLanguage() {
+    language.update((lang) => (lang === 'en' ? 'he' : 'en'));
+  }
+
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+  }
+
+  function selectPanel(panel: 'map' | 'list') {
+    onSelectPanel(panel);
+    menuOpen = false;
   }
 </script>
 
 <header class="topbar">
-  <div class="identity">
-    <h1 class="mono">KETO RECON</h1>
-    <p class="hotel">{trip.hotel.name} — {trip.location_name}</p>
+  <div class="row-main">
+    <div class="identity">
+      <h1 class="mono">KETO RECON</h1>
+      <p class="hotel">{t(trip.hotel.name, $language)} — {t(trip.location_name, $language)}</p>
+    </div>
+    {#if manifest.length > 1}
+      <select
+        class="mono"
+        value={currentSlug}
+        onchange={(e) => onChangeTrip((e.target as HTMLSelectElement).value)}
+      >
+        {#each manifest as m (m.slug)}
+          <option value={m.slug}>{t(m.location_name, $language)}</option>
+        {/each}
+      </select>
+    {/if}
+    <button class="lang-toggle mono" onclick={toggleLanguage} aria-label="Toggle language">
+      <Languages size={16} />
+      {$language.toUpperCase()}
+    </button>
+    <div class="hamburger-wrap">
+      <button
+        class="hamburger"
+        onclick={toggleMenu}
+        aria-label="Open panel menu"
+        aria-expanded={menuOpen}
+      >
+        <Menu size={20} />
+      </button>
+      {#if menuOpen}
+        <div class="dropdown">
+          <button class:active={activePanel === 'map'} onclick={() => selectPanel('map')}>
+            <MapIcon size={14} /> Map
+          </button>
+          <button class:active={activePanel === 'list'} onclick={() => selectPanel('list')}>
+            <ListIcon size={14} /> List
+          </button>
+        </div>
+      {/if}
+    </div>
   </div>
-  <Slider />
-  {#if manifest.length > 1}
-    <select class="mono" value={trip.location_name} onchange={handleTripChange}>
-      {#each manifest as m (m.slug)}
-        <option value={m.location_name}>{m.location_name}</option>
-      {/each}
-    </select>
-  {/if}
-  <button class="hamburger" onclick={onToggleMenu} aria-label="Toggle panels">
-    <Menu size={20} />
-  </button>
+  <div class="row-slider">
+    <Slider />
+  </div>
 </header>
 
 <style>
   .topbar {
     display: flex;
+    flex-direction: column;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+  }
+  .row-main {
+    display: flex;
     align-items: center;
     gap: 1rem;
     padding: 0.75rem 1rem;
-    background: var(--bg-panel);
-    border-bottom: 1px solid var(--border);
     flex-wrap: wrap;
+  }
+  .identity {
+    order: 1;
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .identity h1 {
     margin: 0;
@@ -60,25 +112,82 @@
     margin: 0;
     font-size: 0.8rem;
     color: var(--text-dim);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   select {
+    order: 2;
     background: var(--bg-elevated);
     color: var(--text);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 0.25rem 0.5rem;
   }
-  .hamburger {
+  .lang-toggle {
+    order: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    border-radius: var(--radius);
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  .lang-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .hamburger-wrap {
+    order: 2;
+    position: relative;
     display: none;
+  }
+  .hamburger {
     background: none;
     border: 1px solid var(--border);
     color: var(--text);
     border-radius: var(--radius);
     padding: 0.4rem 0.7rem;
   }
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    right: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    min-width: 130px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .dropdown button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    text-align: left;
+  }
+  .dropdown button:hover {
+    background: var(--bg-panel);
+  }
+  .dropdown button.active {
+    color: var(--accent);
+  }
+  .row-slider {
+    order: 3;
+  }
   @media (max-width: 860px) {
-    .hamburger {
-      display: inline-flex;
+    .hamburger-wrap {
+      display: block;
     }
   }
 </style>

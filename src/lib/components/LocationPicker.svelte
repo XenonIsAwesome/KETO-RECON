@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ManifestEntry } from '../types';
+  import { language, t } from '../language';
 
   let { manifest, onSelect }: { manifest: ManifestEntry[]; onSelect: (slug: string) => void } =
     $props();
@@ -11,7 +12,7 @@
   <ul>
     {#each manifest as entry (entry.slug)}
       <li>
-        <button onclick={() => onSelect(entry.slug)}>{entry.location_name}</button>
+        <button onclick={() => onSelect(entry.slug)}>{t(entry.location_name, $language)}</button>
       </li>
     {/each}
   </ul>

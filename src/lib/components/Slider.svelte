@@ -24,6 +24,13 @@
     flex: 1;
     min-width: 160px;
   }
+  @media (max-width: 860px) {
+    .slider-wrap {
+      flex-basis: 100%;
+      min-width: 0;
+      order: 3;
+    }
+  }
   input[type='range'] {
     flex: 1;
     accent-color: var(--accent);

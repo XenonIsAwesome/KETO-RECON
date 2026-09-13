@@ -2,6 +2,7 @@
   import type { RankedRestaurant } from '../ranking';
   import { selectedId } from '../stores';
   import { navigateToRestaurant } from '../router';
+  import { language, t } from '../language';
 
   let { restaurant, selected = false }: { restaurant: RankedRestaurant; selected?: boolean } =
     $props();
@@ -14,7 +15,7 @@
 
 <button class="row mono" class:selected id="restaurant-{restaurant.id}" onclick={open}>
   <span class="position">#{restaurant.position}</span>
-  <span class="name">{restaurant.name}</span>
+  <span class="name">{t(restaurant.name, $language)}</span>
 </button>
 
 <style>

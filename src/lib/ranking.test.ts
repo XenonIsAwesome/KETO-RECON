@@ -5,7 +5,7 @@ import type { Restaurant } from './types';
 function makeRestaurant(overrides: Partial<Restaurant>): Restaurant {
   return {
     id: 'r',
-    name: 'R',
+    name: { en: 'R', he: 'ר' },
     website_url: 'https://example.com',
     menu_url_he: null,
     image_url: 'https://example.com/img.jpg',
@@ -13,7 +13,7 @@ function makeRestaurant(overrides: Partial<Restaurant>): Restaurant {
     lng: 0,
     google_rating: 4.0,
     keto_score: 5,
-    description: 'desc',
+    description: { en: 'desc', he: 'תיאור' },
     distance_km: 1,
     taxi_fare_day: 10,
     taxi_fare_night: 12,

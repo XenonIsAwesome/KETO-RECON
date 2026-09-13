@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { RankedRestaurant } from '../ranking';
   import { selectedId } from '../stores';
+  import { language, t } from '../language';
+  import { currencySymbol } from '../currency';
   import KetoBadge from './KetoBadge.svelte';
   import { Star, MapPin, Car, ExternalLink, BookOpen } from 'lucide-svelte';
 
@@ -14,12 +16,12 @@
   id="restaurant-{restaurant.id}"
   onclick={() => selectedId.set(restaurant.id)}
 >
-  <img class="photo" src={restaurant.image_url} alt={restaurant.name} loading="lazy" />
+  <img class="photo" src={restaurant.image_url} alt={t(restaurant.name, $language)} loading="lazy" />
   <div class="body">
     <div class="header-row">
       <span class="position mono">#{restaurant.position}</span>
       <a class="name" href={restaurant.website_url} target="_blank" rel="noopener noreferrer">
-        {restaurant.name}
+        {t(restaurant.name, $language)}
       </a>
       <KetoBadge score={restaurant.keto_score} />
     </div>
@@ -27,11 +29,11 @@
       <span class="rating"><Star size={14} /> {restaurant.google_rating.toFixed(1)}</span>
       <span class="distance"><MapPin size={14} /> {restaurant.distance_km.toFixed(1)} km</span>
       <span class="fare">
-        <Car size={14} /> day {restaurant.taxi_fare_day} / night {restaurant.taxi_fare_night}
-        {restaurant.currency}
+        <Car size={14} /> day {currencySymbol(restaurant.currency)}{restaurant.taxi_fare_day} /
+        night {currencySymbol(restaurant.currency)}{restaurant.taxi_fare_night}
       </span>
     </div>
-    <p class="description">{restaurant.description}</p>
+    <p class="description">{t(restaurant.description, $language)}</p>
     <div class="actions">
       <a class="link" href={restaurant.website_url} target="_blank" rel="noopener noreferrer">
         <ExternalLink size={14} /> Website

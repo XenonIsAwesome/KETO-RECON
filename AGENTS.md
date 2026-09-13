@@ -13,21 +13,24 @@ without needing further instructions.**
    `eilat`, `barcelona-2027`.
 2. Find the hotel's exact coordinates (lat/lng) — e.g. via
    OpenStreetMap's search/Nominatim, or the hotel's own site.
-3. Create `public/data/<slug>.json` matching this schema exactly:
+3. Create `public/data/<slug>.json` matching this schema exactly. Every
+   `Localized` field (`location_name`, `hotel.name`, a restaurant's
+   `name` and `description`) is an object with both an `en` and a `he`
+   value — see section 2 below for how to collect the Hebrew side:
 
    ```json
    {
-     "location_name": "Human-readable trip/hotel label",
+     "location_name": { "en": "Human-readable trip/hotel label", "he": "התוית בעברית" },
      "hotel": {
-       "name": "Hotel name",
+       "name": { "en": "Hotel name", "he": "שם המלון בעברית" },
        "lat": 0.0,
        "lng": 0.0,
-       "address": "Full address"
+       "address": "Full address (single language is fine — not shown in the UI)"
      },
      "restaurants": [
        {
          "id": "unique-slug",
-         "name": "Restaurant Name",
+         "name": { "en": "Restaurant Name", "he": "שם המסעדה בעברית" },
          "website_url": "https://...",
          "menu_url_he": "https://... or null",
          "image_url": "https://... (externally hosted image)",
@@ -35,7 +38,10 @@ without needing further instructions.**
          "lng": 0.0,
          "google_rating": 4.5,
          "keto_score": 7.2,
-         "description": "Short paragraph: what the place is, and specifically how well it fits keto.",
+         "description": {
+           "en": "Short paragraph: what the place is, and specifically how well it fits keto.",
+           "he": "אותו תיאור בעברית — לא תרגום מילולי, אלא ניסוח טבעי."
+         },
          "distance_km": 1.3,
          "taxi_fare_day": 25,
          "taxi_fare_night": 32,
@@ -46,11 +52,16 @@ without needing further instructions.**
    ```
 
 4. Add an entry to `public/data/index.json` (an array of
-   `{ "slug": ..., "location_name": ... }`), so the location picker
-   (or auto-load, if it's the only trip) picks it up. Do not remove
-   existing entries unless the user asks to retire a trip.
+   `{ "slug": ..., "location_name": { "en": ..., "he": ... } }`), so
+   the location picker (or auto-load, if it's the only trip) picks it
+   up. Do not remove existing entries unless the user asks to retire a
+   trip.
 5. Run `npm run build` to confirm the JSON is valid and the site still
    builds.
+6. `currency` stays an ISO-ish code (`"ILS"`, `"USD"`, ...) — the app
+   renders the matching symbol (₪, $, ...) itself via
+   `src/lib/currency.ts`. If a trip uses a currency not in that file's
+   `SYMBOLS` map, add it there too.
 
 ## 2. Researching and adding restaurant data
 
@@ -63,6 +74,14 @@ without needing further instructions.**
 - **Required fields:** every field in the schema above is required
   except `menu_url_he`, which is `null` if no Hebrew (or otherwise
   local-language) menu page exists.
+- **Bilingual `name` and `description`:** collect both an English and
+  a Hebrew version of the restaurant's name (many are the same brand
+  name either way, e.g. "Pastory"/"פסטורי" — check the restaurant's
+  own site/socials for how they render their own name in Hebrew, don't
+  just transliterate blind) and a genuinely separate Hebrew
+  `description` (write it naturally in Hebrew — not a machine
+  translation of the English one, though it should cover the same
+  ground: what the place is, and specifically how it fits keto).
 - **`description`:** one short paragraph (2–4 sentences) covering (a)
   what kind of restaurant it is and (b) specifically how well it fits
   keto — which dishes work, what to avoid, whether staff are used to
@@ -74,6 +93,14 @@ without needing further instructions.**
 - **`menu_url_he`:** look for a Hebrew-language menu page on the
   restaurant's own site or a menu aggregator; if none exists, use
   `null` rather than omitting the field.
+- **Verify every link before it goes in the dataset.** Fetch
+  `website_url` and `menu_url_he` (when not `null`) and confirm each
+  one actually loads the restaurant's real page — not a 404, a parked
+  domain, or a redirect to something unrelated. A link that looked
+  right in a search result can still be dead or renamed; if it 404s,
+  search for the restaurant's current official site (or its listing on
+  an aggregator like the hotel chain's own site) instead of leaving a
+  broken link in the data.
 - **Taxi fares (`taxi_fare_day` / `taxi_fare_night`):** estimate using
   the destination country's standard taxi tariff structure (e.g.
   Israel's government-regulated Tariff 1 daytime / Tariff 2

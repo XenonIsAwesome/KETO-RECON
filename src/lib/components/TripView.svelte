@@ -6,19 +6,26 @@
   import MapView from './MapView.svelte';
   import RankingsList from './RankingsList.svelte';
 
-  let { manifest, onChangeTrip }: { manifest: ManifestEntry[]; onChangeTrip: (slug: string) => void } =
+  let {
+    manifest,
+    currentSlug,
+    onChangeTrip,
+  }: { manifest: ManifestEntry[]; currentSlug: string; onChangeTrip: (slug: string) => void } =
     $props();
 
   let mobilePanel = $state<'map' | 'list'>('list');
-
-  function toggleMobilePanel() {
-    mobilePanel = mobilePanel === 'list' ? 'map' : 'list';
-  }
 </script>
 
 {#if $trip}
   <div class="trip-view">
-    <TopBar trip={$trip} {manifest} {onChangeTrip} onToggleMenu={toggleMobilePanel} />
+    <TopBar
+      trip={$trip}
+      {manifest}
+      {currentSlug}
+      {onChangeTrip}
+      activePanel={mobilePanel}
+      onSelectPanel={(p) => (mobilePanel = p)}
+    />
     <div class="panels">
       <div class="map-panel" class:hidden-mobile={!$isDesktop && mobilePanel !== 'map'}>
         <MapView />
