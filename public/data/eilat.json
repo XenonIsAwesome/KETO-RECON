@@ -20,7 +20,7 @@
         "he": "לה סרדין"
       },
       "website_url": "https://les-sardines.net/home-en/",
-      "menu_url_he": null,
+      "menu_url_he": "https://les-sardines.net/menu-heb/",
       "image_url": "https://les-sardines.net/wp-content/uploads/2024/08/la-sardin-LOGO1-1024x581.png",
       "lat": 29.5478,
       "lng": 34.967,
@@ -42,7 +42,7 @@
         "he": "ג'ירף"
       },
       "website_url": "https://en.giraffe.co.il/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.giraffe.co.il/Menu",
       "image_url": "https://media.getmood.io/warehouse/dynamic/299427.jpg",
       "lat": 29.5480519,
       "lng": 34.9664343,
@@ -64,7 +64,7 @@
         "he": "ראנץ' האוס"
       },
       "website_url": "https://www.isrotelexclusivecollection.com/isr-eventsmain/hangouts/restaurants/eilat/royal-beach/ranch-house/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.ranchhouse.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98",
       "image_url": "https://cdn.speedsize.com/61a206a8-07c4-46c9-b2ac-07edd20dd59d/https://media.isrotel.co.il/umb/22175/_dsf5607.jpg?anchor=center&mode=crop&width=400&height=297&rnd=133836521140000000/f_auto",
       "lat": 29.5494029,
       "lng": 34.9632303,
@@ -108,7 +108,7 @@
         "he": "המחבוא של אדי"
       },
       "website_url": "https://eddieshideaway.com/en/main/",
-      "menu_url_he": null,
+      "menu_url_he": "https://eddieshideaway.com/%D7%94%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%9E%D7%97%D7%91%D7%95%D7%90-%D7%A9%D7%9C-%D7%90%D7%93%D7%99/",
       "image_url": "https://eddieshideaway.com/wp-content/uploads/2026/09/e0ed6070-ab95-4b25-b6c1-1012943f7649-1024x972.webp",
       "lat": 29.5599618,
       "lng": 34.9531504,
@@ -130,7 +130,7 @@
         "he": "המפלט האחרון"
       },
       "website_url": "https://www.hamiflat-eilat.co.il/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.hamiflat-eilat.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98",
       "image_url": "https://irp.cdn-website.com/10ae4197/dms3rep/multi/opt/spagetti-2304w.jpg",
       "lat": 29.5129,
       "lng": 34.9238,
@@ -152,7 +152,7 @@
         "he": "רק דגים"
       },
       "website_url": "https://rak-dagim.rol.co.il/",
-      "menu_url_he": null,
+      "menu_url_he": "https://rak-dagim.rol.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98/",
       "image_url": "https://rak-dagim.rol.co.il/wp-content/uploads/2024/03/1-1.jpg",
       "lat": 29.5513191,
       "lng": 34.9582022,
@@ -196,7 +196,7 @@
         "he": "אנג'לינה"
       },
       "website_url": "https://www.isrotel.com/eventsmain/hangouts/restaurants/eilat/isrotel-king-solomon/angelina-restaurant/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.angelinaeilat.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98",
       "image_url": "https://media.isrotel.co.il/umb/36883/angelina-1600x400.jpg",
       "lat": 29.5523953,
       "lng": 34.9614028,
@@ -218,7 +218,7 @@
         "he": "פאגו פאגו"
       },
       "website_url": "https://pagopagorest.com/",
-      "menu_url_he": null,
+      "menu_url_he": "https://pagopagorest.com/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%9E%D7%A1%D7%A2%D7%93%D7%94",
       "image_url": "https://pagopagorest.com/wp-content/uploads/2025/08/DSC04991-scaled.webp",
       "lat": 29.5534851,
       "lng": 34.9613526,
@@ -240,7 +240,7 @@
         "he": "ג'ינג'ר"
       },
       "website_url": "https://restaurantguru.com/Ginger-Eilat",
-      "menu_url_he": null,
+      "menu_url_he": "https://gingereilat.com/menu/",
       "image_url": "https://img02.restaurantguru.com/c983-interior-Ginger-asian-kitchen-1.jpg",
       "lat": 29.5513346,
       "lng": 34.9518959,
@@ -262,7 +262,7 @@
         "he": "פדרו"
       },
       "website_url": "https://pedro.co.il/",
-      "menu_url_he": null,
+      "menu_url_he": "https://pedro.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98/",
       "image_url": "https://static.wixstatic.com/media/558f94_6df97a46658142cfa72a4f3c5ce4f091f000.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/558f94_6df97a46658142cfa72a4f3c5ce4f091f000.jpg",
       "lat": 29.5632854,
       "lng": 34.9537727,
@@ -394,7 +394,7 @@
         "he": "כפות תמרים"
       },
       "website_url": "https://www.capottmarim.co.il/en/main-2/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.capottmarim.co.il/menu/",
       "image_url": "https://www.aravadesert.co.il/uploads/w-640/1548055707.2142.jpg",
       "lat": 29.5817638,
       "lng": 34.963477,
@@ -504,7 +504,7 @@
         "he": "הלב הרחב"
       },
       "website_url": "https://halev-harahav.co.il/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.rest.co.il/rest/80222741/",
       "image_url": "https://halev-harahav.co.il/wp-content/uploads/2021/11/3.jpg",
       "lat": 29.5483683,
       "lng": 34.9517502,
@@ -526,7 +526,7 @@
         "he": "מסעדת המפרץ"
       },
       "website_url": "https://www.hamipratzeilat.co.il/",
-      "menu_url_he": null,
+      "menu_url_he": "https://www.hamipratzeilat.co.il/copy-of-%D7%92%D7%9C%D7%A8%D7%99%D7%94",
       "image_url": "https://static.wixstatic.com/media/ac0b37_f8bf48de6f3d43bfb44186e582d3bc7df000.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ac0b37_f8bf48de6f3d43bfb44186e582d3bc7df000.jpg",
       "lat": 29.5508639,
       "lng": 34.9593115,
