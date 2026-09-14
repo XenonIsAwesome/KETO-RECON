@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { RankedRestaurant } from '../ranking';
   import { selectedId } from '../stores';
-  import { language, t } from '../language';
+  import { language, t, ui } from '../language';
   import { currencySymbol } from '../currency';
   import KetoBadge from './KetoBadge.svelte';
   import { Star, MapPin, Car, ExternalLink, BookOpen } from 'lucide-svelte';
@@ -44,11 +44,11 @@
     </p>
     <div class="actions">
       <a class="link" href={restaurant.website_url} target="_blank" rel="noopener noreferrer">
-        <ExternalLink size={14} /> Website
+        <ExternalLink size={14} /> {t(ui.website, $language)}
       </a>
       {#if restaurant.menu_url_he}
         <a class="link" href={restaurant.menu_url_he} target="_blank" rel="noopener noreferrer">
-          <BookOpen size={14} /> Menu
+          <BookOpen size={14} /> {t(ui.menu, $language)}
         </a>
       {/if}
     </div>

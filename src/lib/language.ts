@@ -33,3 +33,13 @@ if (typeof window !== 'undefined') {
 export function t(text: Localized, lang: Language): string {
   return text[lang];
 }
+
+// Static UI strings that aren't part of the trip data itself (restaurant
+// names/descriptions come from the JSON), but still need to flip to
+// Hebrew alongside it.
+export const ui = {
+  website: { en: 'Website', he: 'אתר' },
+  menu: { en: 'Menu', he: 'תפריט' },
+  backToRankings: { en: 'BACK TO RANKINGS', he: 'חזרה לדירוג' },
+  restaurantNotFound: { en: 'Restaurant not found.', he: 'המסעדה לא נמצאה.' },
+} satisfies Record<string, Localized>;
