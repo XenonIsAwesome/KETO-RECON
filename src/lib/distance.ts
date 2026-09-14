@@ -44,6 +44,10 @@ async function drivingDistancesKm(
       // distance instead of a wrong or missing value.
       if (element?.status === 'OK' && element.distance) {
         results.set(d.id, element.distance.value / 1000);
+      } else {
+        console.warn(
+          `[keto-recon] Keeping fallback distance_km for "${d.id}" — Google Distance Matrix returned ${element?.status ?? 'no element'}`,
+        );
       }
     });
   }
@@ -65,7 +69,12 @@ export async function refineTripDistances(trip: Trip): Promise<Trip> {
       trip.hotel,
       trip.restaurants.map((r) => ({ id: r.id, lat: r.lat, lng: r.lng })),
     );
-  } catch {
+  } catch (err) {
+    // Falling back silently to the caller is intentional (no API key is a
+    // perfectly normal, supported state) — but silent to the console too
+    // would make a real misconfiguration (bad key, Distance Matrix not
+    // enabled, quota) indistinguishable from "no key set" while debugging.
+    console.warn('[keto-recon] Falling back to static distance_km — Google Maps distance recalculation failed:', err);
     return trip;
   }
 
