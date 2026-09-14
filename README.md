@@ -1,67 +1,126 @@
-# Svelte + TS + Vite
+# Keto Recon
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+A field guide for finding keto-friendly restaurants near your hotel on a
+trip — ranked by a slider you control between "closest" and "best keto
+fit," with bilingual (English/Hebrew) content, Hebrew and English menu
+links where they exist, a map, and offline support as an installable PWA.
+
+Live app: deployed to GitHub Pages on every push to `main` (see
+[Deployment](#deployment)).
+
+## What it does
+
+- **Pick a trip.** Each trip is a hotel + a curated list of nearby
+  restaurants (`public/data/<slug>.json`). If there's only one trip, it
+  loads automatically; with more than one, you get a picker.
+- **Rank restaurants with a slider.** Drag between "CLOSER" and "KETO
+  FIT" to re-sort the list by a blend of distance from the hotel and each
+  restaurant's authored `keto_score` (0–10) — see
+  `src/lib/ranking.ts`.
+- **Browse on a map or a list**, side by side on desktop, toggled on
+  mobile. The map is Leaflet + OpenStreetMap, with a Street/Satellite
+  layer switch (satellite via Esri World Imagery — see
+  [Maps & distances](#maps--distances)).
+- **Tap into a restaurant** for its photo, keto-fit description, rating,
+  distance, day/night taxi fare estimate, and links to its website and
+  menu — in whichever of Hebrew/English actually exist for that
+  restaurant.
+- **Switch language** (🇺🇸/🇮🇱) any time — restaurant names, descriptions,
+  and all UI text flip between English and Hebrew (with RTL text
+  direction where needed).
+- **Works offline** after the first load: it's an installable PWA that
+  precaches the app shell and caches trip data and map tiles it's seen.
+
+## Getting started
+
+Requires Node (see `.nvmrc` for the version this project targets).
+
+```sh
+npm install
+npm run dev       # start the dev server
+npm run check     # type-check (svelte-check + tsc)
+npm test          # run the test suite (vitest)
+npm run build     # production build to dist/
+npm run preview   # serve the production build locally
+```
+
+No API key or `.env` is required to run the app — see below.
 
 ## Maps & distances
 
-The map itself stays Leaflet + OpenStreetMap, with a Street/Satellite
-layer toggle (satellite via Esri World Imagery — OSM doesn't publish its
-own aerial imagery, so this is the usual free, no-API-key pairing for it).
+These are two independent pieces using two different providers — don't
+assume changing one means changing the other (see `AGENTS.md` §4 for the
+full reasoning if you're an agent working on this repo).
 
-Each restaurant's distance from the hotel is recalculated separately using
-the Google Maps JavaScript API (real driving distance via Distance Matrix,
-matching how the taxi fare fields are framed), with the trip data's
-baked-in distance_km — originally OSM/haversine-derived — as an automatic
-per-restaurant fallback whenever Google Maps can't be used: no API key
-configured, a network failure, a quota error, or a specific route it can't
-resolve.
+- **The map** is Leaflet + OpenStreetMap (`src/lib/components/MapView.svelte`),
+  with a Street/Satellite layer toggle. OSM itself has no aerial imagery
+  of its own, so the satellite layer is Esri World Imagery — free, no API
+  key, the standard pairing for this.
+- **Distance calculation** (`distance_km`, used both for ranking and the
+  distance shown on each restaurant) is separately upgraded at runtime
+  using the Google Maps JavaScript API's Distance Matrix service — real
+  driving distance from the hotel, matching how the taxi-fare fields are
+  framed (`src/lib/distance.ts`, `src/lib/googleMaps.ts`). Each trip
+  shows its static, OSM/haversine-derived `distance_km` immediately, then
+  quietly upgrades to Google's number per restaurant once it resolves.
 
-To enable the Google-powered distance recalculation locally, copy
-`.env.example` to `.env` and set `VITE_GOOGLE_MAPS_API_KEY` to a key with
-the Distance Matrix API enabled, restricted by HTTP referrer in Google
-Cloud Console. Leaving it unset is fine — distances just stay on the OSM
-fallback baked into the trip data.
+The static `distance_km` in the trip JSON is the **permanent fallback**,
+not a placeholder — it's what's used, with no error shown, whenever
+Google Maps can't be used: no API key configured, a network failure, a
+quota error, or a specific route Google can't resolve. This is the
+default, fully-supported state; the app is never broken by a missing key.
 
-## Recommended IDE Setup
+To enable the Google-powered distance recalculation, copy `.env.example`
+to `.env` and set `VITE_GOOGLE_MAPS_API_KEY` to a key with the Distance
+Matrix API enabled, restricted by HTTP referrer in Google Cloud Console.
+If something's misconfigured (bad key, API not enabled, quota), the
+browser console logs a `[keto-recon]`-prefixed warning explaining why it
+fell back — check there first when distances aren't updating.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Project structure
 
-## Need an official Svelte framework?
-
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
-
-## Technical considerations
-
-**Why use this over SvelteKit?**
-
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
 ```
+public/data/index.json     Manifest of trips: [{ slug, location_name }]
+public/data/<slug>.json    One trip: hotel + restaurant list (see AGENTS.md for the schema)
+src/App.svelte             Top-level routing: location picker / trip view / restaurant detail
+src/lib/
+  types.ts                 Trip/Restaurant/Hotel/ManifestEntry types
+  dataLoader.ts             Fetches manifest + trip JSON
+  ranking.ts                The distance/keto-score blend behind the slider
+  distance.ts, googleMaps.ts  Google Distance Matrix recalculation + fallback
+  mapIcons.ts               Marker SVGs shared by the map
+  language.ts               EN/HE language store + UI string table
+  currency.ts               ISO currency code → symbol
+  router.ts                 Minimal hash-based router (trip view / restaurant detail)
+  stores.ts                 Shared Svelte stores (trip, ranking, selection, slider)
+  components/               Svelte components (map, list, cards, top bar, etc.)
+```
+
+Adding a new trip, researching restaurant data, and the keto-score rubric
+are all documented in **`AGENTS.md`** (symlinked as `CLAUDE.md`) — written
+so an agent (or a person) can add a full trip end-to-end from just a
+location name.
+
+## Deployment
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which runs
+`npm ci && npm run build` and publishes `dist/` to GitHub Pages. No
+manual deploy step is needed once the repo's **Settings → Pages → Build
+and deployment → Source** is set to "GitHub Actions" (a one-time setup
+step, not something the workflow itself can set).
+
+The current workflow doesn't set `VITE_GOOGLE_MAPS_API_KEY`, so the
+deployed site runs on the OSM distance fallback (which is a fully
+supported, intentional state — see above). To enable Google-powered
+distances on the deployed site, add a repository secret named
+`VITE_GOOGLE_MAPS_API_KEY` and pass it into the `npm run build` step in
+`.github/workflows/deploy.yml` as an env var — Vite bakes `VITE_*` env
+vars in at build time, not runtime, so it has to be present during that
+build step specifically, not just set somewhere on the server.
+
+## Tech stack
+
+Svelte 5 (runes) + TypeScript + Vite, Leaflet for the map, the Google
+Maps JavaScript API for distance recalculation, `vite-plugin-pwa` for
+offline support, and Vitest for tests. No backend — trip data is static
+JSON served from `public/data/`, and the whole app is a static site.
