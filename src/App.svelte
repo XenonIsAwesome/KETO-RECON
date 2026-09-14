@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { loadManifest, loadTrip } from './lib/dataLoader';
+  import { refineTripDistances } from './lib/distance';
   import { trip as tripStore } from './lib/stores';
   import { route } from './lib/router';
   import type { ManifestEntry } from './lib/types';
@@ -30,11 +31,19 @@
     loading = true;
     error = null;
     try {
-      tripStore.set(await loadTrip(slug));
+      const loaded = await loadTrip(slug);
+      tripStore.set(loaded);
       currentSlug = slug;
+      loading = false;
+
+      // Show the trip immediately with its baked-in (OSM-derived)
+      // distances, then quietly upgrade them to real driving distances
+      // once Google resolves — silently keeping the fallback if it can't.
+      refineTripDistances(loaded).then((refined) => {
+        if (currentSlug === slug) tripStore.set(refined);
+      });
     } catch (e) {
       error = e instanceof Error ? e.message : String(e);
-    } finally {
       loading = false;
     }
   }

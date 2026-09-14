@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Local secrets (e.g. VITE_GOOGLE_MAPS_API_KEY) — see .env.example
+.env
+.env.*
+!.env.example
+
 # Superpowers SDD scratch workspace (ledgers, briefs, review packages)
 .superpowers/
 
