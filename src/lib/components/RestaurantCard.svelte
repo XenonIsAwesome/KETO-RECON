@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { RankedRestaurant } from '../ranking';
   import { selectedId } from '../stores';
-  import { language, t, ui } from '../language';
+  import { language, t, ui, menuLabel } from '../language';
   import { currencySymbol } from '../currency';
   import KetoBadge from './KetoBadge.svelte';
   import { Star, MapPin, Car, ExternalLink, BookOpen } from 'lucide-svelte';
@@ -48,7 +48,7 @@
       </a>
       {#if restaurant.menu_url_he}
         <a class="link" href={restaurant.menu_url_he} target="_blank" rel="noopener noreferrer">
-          <BookOpen size={14} /> {t(ui.menu, $language)}
+          <BookOpen size={14} /> {menuLabel($language)}
         </a>
       {/if}
     </div>

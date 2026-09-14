@@ -39,7 +39,17 @@ export function t(text: Localized, lang: Language): string {
 // Hebrew alongside it.
 export const ui = {
   website: { en: 'Website', he: 'אתר' },
+  // The data only ever gives us a menu link in one language at a time
+  // (currently always Hebrew — see Restaurant.menu_url_he). When the
+  // viewer isn't reading in that language, plain "Menu" is misleading —
+  // call out which language it's actually in.
   menu: { en: 'Menu', he: 'תפריט' },
+  hebrewMenu: { en: 'Hebrew Menu', he: 'תפריט' },
   backToRankings: { en: 'BACK TO RANKINGS', he: 'חזרה לדירוג' },
   restaurantNotFound: { en: 'Restaurant not found.', he: 'המסעדה לא נמצאה.' },
 } satisfies Record<string, Localized>;
+
+/** Label for a link to a menu that's only available in Hebrew. */
+export function menuLabel(lang: Language): string {
+  return t(lang === 'he' ? ui.menu : ui.hebrewMenu, lang);
+}
