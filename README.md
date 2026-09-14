@@ -2,6 +2,26 @@
 
 This template should help get you started developing with Svelte and TypeScript in Vite.
 
+## Maps & distances
+
+The map itself stays Leaflet + OpenStreetMap, with a Street/Satellite
+layer toggle (satellite via Esri World Imagery — OSM doesn't publish its
+own aerial imagery, so this is the usual free, no-API-key pairing for it).
+
+Each restaurant's distance from the hotel is recalculated separately using
+the Google Maps JavaScript API (real driving distance via Distance Matrix,
+matching how the taxi fare fields are framed), with the trip data's
+baked-in distance_km — originally OSM/haversine-derived — as an automatic
+per-restaurant fallback whenever Google Maps can't be used: no API key
+configured, a network failure, a quota error, or a specific route it can't
+resolve.
+
+To enable the Google-powered distance recalculation locally, copy
+`.env.example` to `.env` and set `VITE_GOOGLE_MAPS_API_KEY` to a key with
+the Distance Matrix API enabled, restricted by HTTP referrer in Google
+Cloud Console. Leaving it unset is fine — distances just stay on the OSM
+fallback baked into the trip data.
+
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).

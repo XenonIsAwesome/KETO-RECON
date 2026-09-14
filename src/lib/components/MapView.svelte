@@ -7,46 +7,25 @@
   import { isDesktop } from '../breakpoint';
   import { navigateToRestaurant } from '../router';
   import { language, t, type Language } from '../language';
+  import { HOTEL_MARKER_SIZE, MARKER_ACCENT, MARKER_ACCENT_SELECTED, MARKER_MAX_SIZE, MARKER_MIN_SIZE, hotelMarkerSvg, restaurantMarkerSvg } from '../mapIcons';
   import type { RankedRestaurant } from '../ranking';
   import type { Trip } from '../types';
 
-  const ACCENT = '#39ff88';
-  const ACCENT_SELECTED = '#4fd8ff';
-  const MIN_SIZE = 22;
-  const MAX_SIZE = 44;
-
-  // Lucide "utensils-crossed" glyph — a restaurant marker reads more
-  // clearly on a map than a generic pin or plain circle.
-  const UTENSILS_CROSSED_PATHS = [
-    'm16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8',
-    'M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7',
-    'm2.1 21.8 6.4-6.3',
-    'm19 5-7 7',
-  ];
-
   function makeIcon(size: number, color: string): L.DivIcon {
-    const paths = UTENSILS_CROSSED_PATHS.map((d) => `<path d="${d}"/>`).join('');
     return L.divIcon({
       className: 'restaurant-marker',
-      html: `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`,
+      html: restaurantMarkerSvg(size, color),
       iconSize: [size, size],
       iconAnchor: [size / 2, size / 2],
     });
   }
 
-  // Lucide "bed" glyph — the hotel marker so it reads as "where you're
-  // staying" rather than another generic map pin.
-  const HOTEL_COLOR = '#4fd8ff';
-  const HOTEL_SIZE = 40;
-  const BED_PATHS = ['M2 4v16', 'M2 8h18a2 2 0 0 1 2 2v10', 'M2 17h20', 'M6 8v9'];
-
   function makeHotelIcon(): L.DivIcon {
-    const paths = BED_PATHS.map((d) => `<path d="${d}"/>`).join('');
     return L.divIcon({
       className: 'hotel-marker',
-      html: `<svg viewBox="0 0 24 24" width="${HOTEL_SIZE}" height="${HOTEL_SIZE}" fill="none" stroke="${HOTEL_COLOR}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`,
-      iconSize: [HOTEL_SIZE, HOTEL_SIZE],
-      iconAnchor: [HOTEL_SIZE / 2, HOTEL_SIZE / 2],
+      html: hotelMarkerSvg(),
+      iconSize: [HOTEL_MARKER_SIZE, HOTEL_MARKER_SIZE],
+      iconAnchor: [HOTEL_MARKER_SIZE / 2, HOTEL_MARKER_SIZE / 2],
     });
   }
 
@@ -77,10 +56,10 @@
       seen.add(r.id);
       const size =
         maxPos <= 1
-          ? MAX_SIZE
-          : MAX_SIZE - ((r.position - 1) / (maxPos - 1)) * (MAX_SIZE - MIN_SIZE);
+          ? MARKER_MAX_SIZE
+          : MARKER_MAX_SIZE - ((r.position - 1) / (maxPos - 1)) * (MARKER_MAX_SIZE - MARKER_MIN_SIZE);
       sizes.set(r.id, size);
-      const color = currentSelected === r.id ? ACCENT_SELECTED : ACCENT;
+      const color = currentSelected === r.id ? MARKER_ACCENT_SELECTED : MARKER_ACCENT;
 
       let marker = markers.get(r.id);
       if (!marker) {
@@ -109,11 +88,26 @@
   }
 
   onMount(() => {
-    map = L.map(container);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 19,
-    }).addTo(map);
+    });
+    // OSM itself doesn't publish aerial imagery — Esri's World Imagery is
+    // the usual free, no-API-key satellite layer paired with an OSM base,
+    // offered here as an alternate layer rather than replacing the street map.
+    const satelliteLayer = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      {
+        attribution:
+          'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
+        maxZoom: 19,
+      },
+    );
+
+    map = L.map(container, { layers: [streetLayer] });
+    L.control
+      .layers({ Street: streetLayer, Satellite: satelliteLayer })
+      .addTo(map);
 
     // The map panel can be toggled from display:none on mobile (map/list
     // switch) or resized on breakpoint changes; Leaflet only measures its
@@ -134,8 +128,8 @@
 
     const unsubSelected = selectedId.subscribe(($id) => {
       for (const [id, marker] of markers) {
-        const size = sizes.get(id) ?? MIN_SIZE;
-        marker.setIcon(makeIcon(size, id === $id ? ACCENT_SELECTED : ACCENT));
+        const size = sizes.get(id) ?? MARKER_MIN_SIZE;
+        marker.setIcon(makeIcon(size, id === $id ? MARKER_ACCENT_SELECTED : MARKER_ACCENT));
       }
       // Clicking a restaurant card in the list (or a marker on the map)
       // both funnel through selectedId, so either interaction pans the

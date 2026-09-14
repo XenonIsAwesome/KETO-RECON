@@ -62,6 +62,12 @@ without needing further instructions.**
    renders the matching symbol (₪, $, ...) itself via
    `src/lib/currency.ts`. If a trip uses a currency not in that file's
    `SYMBOLS` map, add it there too.
+7. `distance_km` is a straight-line/OSM-derived estimate — see section
+   4 below. It's what's shown until (and unless) Google Maps
+   recalculates it live in the browser, and it's the permanent
+   fallback if Google Maps isn't available, so estimate it as
+   accurately as you reasonably can rather than treating it as
+   throwaway.
 
 ## 2. Researching and adding restaurant data
 
@@ -169,14 +175,49 @@ apply them as a rubric and use judgment, the same way a human reviewer
 would, so that scores stay comparable in intent across trips even
 though no two agents will compute bit-identical numbers.
 
-## 4. Git workflow
+## 4. Map provider vs. distance calculation — don't conflate these
+
+These are two independent things using two different providers. When
+touching either, don't assume changing one means changing the other.
+
+- **The map itself is Leaflet + OpenStreetMap, and stays that way.**
+  `src/lib/components/MapView.svelte` renders OSM street tiles, with a
+  Street/Satellite layer toggle added via Esri World Imagery (free, no
+  API key — OSM has no aerial imagery of its own, so this is the usual
+  free pairing for it, not a Google product). Do not swap the map
+  itself to Google Maps or any other provider unless the user
+  explicitly asks for that specific change — it was tried once and
+  explicitly reverted; the user's actual (and correctly scoped) ask
+  turned out to be for distance calculation only, below.
+- **Distance calculation is separately upgraded via the Google Maps
+  Distance Matrix API**, in `src/lib/distance.ts` and
+  `src/lib/googleMaps.ts`. On loading a trip, `App.svelte` shows it
+  immediately using the static `distance_km` from the trip JSON, then
+  calls `refineTripDistances()` to quietly replace each restaurant's
+  `distance_km` with Google's real driving distance from the hotel —
+  per restaurant, so one failed route doesn't affect the rest.
+- **OSM/the static `distance_km` is the fallback, always, for
+  distance** — not a first-class alternative. It's used whenever
+  Google Maps can't be used: no `VITE_GOOGLE_MAPS_API_KEY` configured
+  (see `.env.example`), the script fails to load, a quota/network
+  error, or a specific route Google can't resolve. This fallback path
+  must keep working with no API key present at all — that's the
+  default, expected state for most local dev and any fork without a
+  key — so never make the Google path required for the app to
+  function.
+- If asked to change how maps or distances work, ask which of the two
+  is meant before touching code — "the map" (rendering/tiles/layers)
+  and "distances" (the `distance_km` numbers used for ranking/display)
+  are not the same request even though they're both geography-related.
+
+## 5. Git workflow
 
 The initial build of this app was committed directly to `main`. **For
 all future changes** (new trips, data edits, code changes), work in a
 feature branch and open a pull request — do not commit directly to
 `main`.
 
-## 5. Deployment
+## 6. Deployment
 
 This repo lives on GitHub. Pushing to `main` (via a merged PR) triggers
 `.github/workflows/deploy.yml` automatically, which builds the site

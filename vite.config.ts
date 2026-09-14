@@ -46,12 +46,23 @@ export default defineConfig({
             },
           },
           {
-            // OSM map tiles: cache what's been seen so the map still renders
-            // (already-viewed area) without a connection.
+            // OSM street tiles: cache what's been seen so the map still
+            // renders (already-viewed area) without a connection.
             urlPattern: ({ url }) => url.hostname.endsWith('tile.openstreetmap.org'),
             handler: 'CacheFirst',
             options: {
               cacheName: 'keto-recon-map-tiles',
+              expiration: { maxEntries: 500, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Esri World Imagery: the satellite layer alternative to the
+            // OSM street tiles above: same caching, same reasoning.
+            urlPattern: ({ url }) => url.hostname === 'server.arcgisonline.com',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'keto-recon-satellite-tiles',
               expiration: { maxEntries: 500, maxAgeSeconds: 60 * 60 * 24 * 30 },
               cacheableResponse: { statuses: [0, 200] },
             },
