@@ -3,6 +3,7 @@
   import { rankRestaurants } from '../ranking';
   import { navigateToTrip } from '../router';
   import RestaurantCard from './RestaurantCard.svelte';
+  import { language, t, ui } from '../language';
   import { ArrowLeft } from 'lucide-svelte';
 
   let { id }: { id: string } = $props();
@@ -14,12 +15,12 @@
 
 <div class="detail-page">
   <button class="back mono" onclick={navigateToTrip}>
-    <ArrowLeft size={16} /> BACK TO RANKINGS
+    <ArrowLeft size={16} /> {t(ui.backToRankings, $language)}
   </button>
   {#if restaurant}
     <RestaurantCard {restaurant} />
   {:else}
-    <p class="mono">Restaurant not found.</p>
+    <p class="mono">{t(ui.restaurantNotFound, $language)}</p>
   {/if}
 </div>
 

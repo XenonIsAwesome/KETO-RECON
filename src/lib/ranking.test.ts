@@ -8,6 +8,7 @@ function makeRestaurant(overrides: Partial<Restaurant>): Restaurant {
     name: { en: 'R', he: 'ר' },
     website_url: 'https://example.com',
     menu_url_he: null,
+    menu_url_en: null,
     image_url: 'https://example.com/img.jpg',
     lat: 0,
     lng: 0,
