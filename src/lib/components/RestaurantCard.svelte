@@ -1,13 +1,22 @@
 <script lang="ts">
   import type { RankedRestaurant } from '../ranking';
   import { selectedId } from '../stores';
-  import { language, t, ui, menuLabel } from '../language';
+  import { language, t, ui, menuLinkLabel, type Language } from '../language';
   import { currencySymbol } from '../currency';
   import KetoBadge from './KetoBadge.svelte';
   import { Star, MapPin, Car, ExternalLink, BookOpen } from 'lucide-svelte';
 
   let { restaurant, selected = false }: { restaurant: RankedRestaurant; selected?: boolean } =
     $props();
+
+  let menuLinks = $derived(
+    (
+      [
+        restaurant.menu_url_he && { lang: 'he' as Language, url: restaurant.menu_url_he },
+        restaurant.menu_url_en && { lang: 'en' as Language, url: restaurant.menu_url_en },
+      ] as const
+    ).filter((link): link is { lang: Language; url: string } => Boolean(link)),
+  );
 </script>
 
 <article
@@ -46,11 +55,11 @@
       <a class="link" href={restaurant.website_url} target="_blank" rel="noopener noreferrer">
         <ExternalLink size={14} /> {t(ui.website, $language)}
       </a>
-      {#if restaurant.menu_url_he}
-        <a class="link" href={restaurant.menu_url_he} target="_blank" rel="noopener noreferrer">
-          <BookOpen size={14} /> {menuLabel($language)}
+      {#each menuLinks as link (link.lang)}
+        <a class="link" href={link.url} target="_blank" rel="noopener noreferrer">
+          <BookOpen size={14} /> {menuLinkLabel(link.lang, $language, menuLinks.length > 1)}
         </a>
-      {/if}
+      {/each}
     </div>
   </div>
 </article>

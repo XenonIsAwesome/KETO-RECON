@@ -12,6 +12,7 @@ export interface Restaurant {
   name: Localized;
   website_url: string;
   menu_url_he: string | null;
+  menu_url_en: string | null;
   image_url: string;
   lat: number;
   lng: number;
